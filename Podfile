@@ -17,7 +17,7 @@ target 'blocko' do
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'Lockbox'
-    pod 'RealmSwift'
+#    pod 'RealmSwift'
     pod 'ObjectMapper'
     pod 'SDWebImage'
     pod 'Fabric'
