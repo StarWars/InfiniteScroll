@@ -1,25 +1,41 @@
-//
-//  {{ module_info.name }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
-//
-
 import UIKit
 
-class {{ module_info.name }}ViewController: UIViewController, {{module_info.name}}ViewInput {
+protocol {{ module_info.name }}ViewInput: BaseViewInput {
 
-    var output: {{ module_info.name }}ViewOutput!
+}
 
-    // MARK: Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        output.viewIsReady()
-    }
+class {{ module_info.name }}ViewController: BaseViewController {
 
+	// MARK: - Constants -
 
-    // MARK: {{module_info.name}}ViewInput
-    func setupInitialState() {
-    }
+	// MARK: - Variables -
+
+	fileprivate var customView: {{ module_info.name }}View { return forceCast(view) }
+	var output: {{ module_info.name }}ViewOutput?
+    override var basePresenter: BasePresenterInput? { return output }
+
+	// MARK: - Initialization -
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		setupView()
+		setupActions()
+	}
+
+	private func setupView() {
+
+	}
+
+	private func setupActions() {
+
+	}
+
+	override func loadView() {
+		view = {{ module_info.name }}View()
+	}
+
+}
+
+extension {{ module_info.name }}ViewController: {{module_info.name}}ViewInput {
+
 }
