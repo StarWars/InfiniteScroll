@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		1D4F8CBEAC62827FE1557945 /* Pods_blocko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE19B17979B0270DD303E550 /* Pods_blocko.framework */; };
+		34F4F4D7BC8CE37FA180B400 /* DashboardModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3131B216C45BC1724B0DE6E7 /* DashboardModuleInteractor.swift */; };
+		3DEFE333D018B4A6C4DFF039 /* DashboardModuleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F793C923B38EF4F6CF7CE0 /* DashboardModuleInteractorTests.swift */; };
+		81D92641E1DF6315BC2228A9 /* DashboardModulePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A9BAC6FD22A1E4BB23CBC /* DashboardModulePresenterTests.swift */; };
+		95A5C5C9A03B82A53CAD2B0B /* DashboardModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE98FD9C1ED5F8CCD3FB78 /* DashboardModuleView.swift */; };
+		A01346FFC35D8AD3FBFDD3F8 /* DashboardModuleWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D75F5ACCE8A3518B0E9AF /* DashboardModuleWireframe.swift */; };
 		A9089C2251C19E2297E2E0B3 /* Pods_blockoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18060FC7FDF7C8C75B1C920 /* Pods_blockoTests.framework */; };
+		B70097378E649EDAFACAE358 /* DashboardModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62872D719EAB14030C0A5 /* DashboardModuleViewController.swift */; };
 		BF0BA8AA213238820063D3E1 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA888213238820063D3E1 /* BaseButton.swift */; };
 		BF0BA8AB213238820063D3E1 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88A213238820063D3E1 /* CustomTabBar.swift */; };
 		BF0BA8AC213238820063D3E1 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88C213238820063D3E1 /* ForceCast.swift */; };
@@ -36,6 +42,7 @@
 		BFE1FCE421322B6B005EE8CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE1FCE221322B6B005EE8CD /* LaunchScreen.storyboard */; };
 		BFE1FCEF21322B6C005EE8CD /* blockoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCEE21322B6C005EE8CD /* blockoTests.swift */; };
 		BFE1FCFA21322B6C005EE8CD /* blockoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCF921322B6C005EE8CD /* blockoUITests.swift */; };
+		C15DDAC2C995977E8E30EA78 /* DashboardModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C985AC39BFBEB60F0C271B /* DashboardModulePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,9 +64,16 @@
 
 /* Begin PBXFileReference section */
 		01B704D810E1821B2BC0A327 /* Pods-blockoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-blockoTests/Pods-blockoTests.release.xcconfig"; sourceTree = "<group>"; };
+		3131B216C45BC1724B0DE6E7 /* DashboardModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleInteractor.swift; sourceTree = "<group>"; };
+		32C985AC39BFBEB60F0C271B /* DashboardModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModulePresenter.swift; sourceTree = "<group>"; };
 		36EB488BF0AC339731CADA58 /* Pods-blocko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blocko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blocko/Pods-blocko.debug.xcconfig"; sourceTree = "<group>"; };
+		443A9BAC6FD22A1E4BB23CBC /* DashboardModulePresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModulePresenterTests.swift; sourceTree = "<group>"; };
+		44F793C923B38EF4F6CF7CE0 /* DashboardModuleInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleInteractorTests.swift; sourceTree = "<group>"; };
 		48363E652CFAB952AD6F321A /* Pods-blockoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-blockoTests/Pods-blockoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C8D75F5ACCE8A3518B0E9AF /* DashboardModuleWireframe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleWireframe.swift; sourceTree = "<group>"; };
+		9CEE98FD9C1ED5F8CCD3FB78 /* DashboardModuleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleView.swift; sourceTree = "<group>"; };
 		B21AE3C85CCE2A1DB6DDD71D /* Pods-blocko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blocko.release.xcconfig"; path = "Pods/Target Support Files/Pods-blocko/Pods-blocko.release.xcconfig"; sourceTree = "<group>"; };
+		B3F62872D719EAB14030C0A5 /* DashboardModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleViewController.swift; sourceTree = "<group>"; };
 		BF0BA888213238820063D3E1 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		BF0BA88A213238820063D3E1 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		BF0BA88C213238820063D3E1 /* ForceCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
@@ -124,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CB133226B57A3B156A5B3EC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F948072B02337187981BFB6B /* DashboardModule */,
+			);
+			name = Tests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		35B2FA27C52DE5B7569AA161 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +156,55 @@
 				01B704D810E1821B2BC0A327 /* Pods-blockoTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		60D052D24F5688B7A4CF1376 /* DashboardModule */ = {
+			isa = PBXGroup;
+			children = (
+				8FA3FA766AAC98CF6BDB2C27 /* View */,
+				7FD8B39B623D23001E3D8464 /* Presenter */,
+				D369805061865402D2C55A90 /* Interactor */,
+				ACF139C9CF7A73B0F3F3BC07 /* Wireframe */,
+			);
+			name = DashboardModule;
+			path = DashboardModule;
+			sourceTree = "<group>";
+		};
+		7FD8B39B623D23001E3D8464 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				32C985AC39BFBEB60F0C271B /* DashboardModulePresenter.swift */,
+			);
+			name = Presenter;
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		85219A9438AA79E9F83B3D71 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				443A9BAC6FD22A1E4BB23CBC /* DashboardModulePresenterTests.swift */,
+			);
+			name = Presenter;
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8FA3FA766AAC98CF6BDB2C27 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3F62872D719EAB14030C0A5 /* DashboardModuleViewController.swift */,
+				9CEE98FD9C1ED5F8CCD3FB78 /* DashboardModuleView.swift */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		ACF139C9CF7A73B0F3F3BC07 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				9C8D75F5ACCE8A3518B0E9AF /* DashboardModuleWireframe.swift */,
+			);
+			name = Wireframe;
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		BF0BA886213238820063D3E1 /* CustomView */ = {
@@ -174,6 +246,7 @@
 			children = (
 				BF0BA899213238820063D3E1 /* Base */,
 				BF0BA88F213238820063D3E1 /* MainTabsModule */,
+				60D052D24F5688B7A4CF1376 /* DashboardModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -347,6 +420,7 @@
 			children = (
 				BFE1FCF021322B6C005EE8CD /* Info.plist */,
 				BFE1FCEE21322B6C005EE8CD /* blockoTests.swift */,
+				0CB133226B57A3B156A5B3EC /* Tests */,
 			);
 			path = blockoTests;
 			sourceTree = "<group>";
@@ -360,6 +434,15 @@
 			path = blockoUITests;
 			sourceTree = "<group>";
 		};
+		D369805061865402D2C55A90 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3131B216C45BC1724B0DE6E7 /* DashboardModuleInteractor.swift */,
+			);
+			name = Interactor;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		D4CC7F1DCB5918F1DC2C4A64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +450,25 @@
 				C18060FC7FDF7C8C75B1C920 /* Pods_blockoTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4CC463DCB0927DBA271664B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				44F793C923B38EF4F6CF7CE0 /* DashboardModuleInteractorTests.swift */,
+			);
+			name = Interactor;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F948072B02337187981BFB6B /* DashboardModule */ = {
+			isa = PBXGroup;
+			children = (
+				E4CC463DCB0927DBA271664B /* Interactor */,
+				85219A9438AA79E9F83B3D71 /* Presenter */,
+			);
+			name = DashboardModule;
+			path = DashboardModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,6 +752,11 @@
 				BF0BA8BB213238820063D3E1 /* NavigationController.swift in Sources */,
 				BF0BA8B3213238820063D3E1 /* BasePresenterInput.swift in Sources */,
 				BF0BA8AF213238820063D3E1 /* MainTabsModuleWireframe.swift in Sources */,
+				B70097378E649EDAFACAE358 /* DashboardModuleViewController.swift in Sources */,
+				95A5C5C9A03B82A53CAD2B0B /* DashboardModuleView.swift in Sources */,
+				C15DDAC2C995977E8E30EA78 /* DashboardModulePresenter.swift in Sources */,
+				34F4F4D7BC8CE37FA180B400 /* DashboardModuleInteractor.swift in Sources */,
+				A01346FFC35D8AD3FBFDD3F8 /* DashboardModuleWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +765,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFE1FCEF21322B6C005EE8CD /* blockoTests.swift in Sources */,
+				3DEFE333D018B4A6C4DFF039 /* DashboardModuleInteractorTests.swift in Sources */,
+				81D92641E1DF6315BC2228A9 /* DashboardModulePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
