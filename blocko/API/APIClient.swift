@@ -16,6 +16,7 @@ class APIClient: NSObject, BaseInteractorProtocol {
 
     // MARK: - Variables -
     var baseURL: String?
+    var baseImagesURL: String?
 
     private var alamofireManager: Alamofire.Session?
     static let sharedInstance = APIClient()
@@ -39,6 +40,7 @@ class APIClient: NSObject, BaseInteractorProtocol {
             if let serverData = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
                 if let currentEnv = serverData["currentEnv"] as? String {
                     baseURL = serverData[currentEnv]?["baseAPIURL"] as? String
+                    baseImagesURL = serverData[currentEnv]?["imagesURL"] as? String
                 }
             }
         } else {
@@ -85,6 +87,20 @@ class APIClient: NSObject, BaseInteractorProtocol {
             request.failureResponseHandler?(nil, APIErrorCode.noInternet)
             return nil
         }
+    }
+
+    func backgroundImageURL(_ movie: Movie?) -> URL? {
+        guard let baseImagesURL = baseImagesURL, let movie = movie else {
+            return nil
+        }
+
+        guard let backgroundPath = movie.backdropPath?.dropFirst() else {
+            DDLogError("Failed to retrieve image background path")
+            return nil
+        }
+
+        let imageURL = "\(baseImagesURL)\(backgroundPath)"
+        return URL(string: imageURL)
     }
 
 }

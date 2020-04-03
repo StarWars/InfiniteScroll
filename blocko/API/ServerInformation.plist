@@ -6,11 +6,8 @@
 	<string>prod</string>
 	<key>prod</key>
 	<dict>
-		<key>baseAPIURL</key>
-		<string>https://api.themoviedb.org/3/</string>
-	</dict>
-	<key>dev</key>
-	<dict>
+		<key>imagesURL</key>
+		<string>https://image.tmdb.org/t/p/w500/</string>
 		<key>baseAPIURL</key>
 		<string>https://api.themoviedb.org/3/</string>
 	</dict>

@@ -1,13 +1,12 @@
 import CocoaLumberjack
+import Kingfisher
 import UIKit
 
 class MovieCellView: UIView, MovieCellConfiguration {
 
     // MARK: - Constants -
-    static var reuseIdentifier: String = "TrainingCell"
-
     private let kDefaultInset: CGFloat = 8
-    private let kCellHeight: CGFloat = 150
+    private let kCellHeight: CGFloat = 160
     private let kTitleHorizontalInset: CGFloat = 16
     private let kTitleVerticalInset: CGFloat = 17
     private let kTimeHorizontalInset: CGFloat = 11
@@ -39,6 +38,8 @@ class MovieCellView: UIView, MovieCellConfiguration {
 
     public lazy var timeView = BlurredLabelView()
 
+    private var gradientLayer: CAGradientLayer?
+
     convenience init() {
         self.init(frame: .zero)
         setupView()
@@ -54,6 +55,8 @@ class MovieCellView: UIView, MovieCellConfiguration {
         backgroundColor = UIColor.clear
 
         addSubview(cellBackground)
+
+        applyGradient(from: UIColor.clear, to: ColorProvider.black)
 
         cellBackground.addSubview(titleWrapper)
         cellBackground.addSubview(timeView)
@@ -95,6 +98,45 @@ class MovieCellView: UIView, MovieCellConfiguration {
     }
 
     func setup(with movie: Movie?) {
+        if let url = APIClient.sharedInstance.backgroundImageURL(movie) {
+            cellBackground.kf.setImage(with: url) { result in
+                switch result {
+                case .failure(let error):
+                    DDLogError(error.errorDescription ?? "Image retrieval error")
+                case .success(_):
+                    break
+                }
+
+            }
+        }
+
+        cellTitle.text = movie?.title
+
+        if let releaseDate = movie?.releaseDate.timeIntervalSince1970.timestampToString(format: DateFormatString.ymd) {
+            cellSubTitle.text = "\(R.string.localizable.release_date_subtitle()) \(releaseDate)"
+        }
+
+        if let voteAverate = movie?.voteAverage {
+            timeView.setup(title: "\(voteAverate)")
+        }
+
+    }
+
+    private func applyGradient(from: UIColor, to: UIColor) {
+
+        if let gradientLayer = gradientLayer {
+            gradientLayer.removeFromSuperlayer()
+        }
+
+        let cellWidth = UIScreen.main.bounds.width - 2 * kDefaultInset
+        let cellHeight = kCellHeight
+        let bounds = CGRect(x: 0, y: 0, width: cellWidth, height: cellHeight)
+
+        let newGradient = cellBackground.createVerticalGradient(from: from, to: to, bounds: bounds)
+
+        gradientLayer = newGradient
+
+        cellBackground.layer.addSublayer(newGradient)
 
     }
 

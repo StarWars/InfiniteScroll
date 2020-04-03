@@ -20,6 +20,13 @@ extension UIView {
         layer.cornerRadius = radius
     }
 
+    func createVerticalGradient(from: UIColor, to: UIColor, bounds: CGRect) -> CAGradientLayer {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [from.cgColor, to.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = bounds
+        return gradientLayer
+    }
 
 }
 

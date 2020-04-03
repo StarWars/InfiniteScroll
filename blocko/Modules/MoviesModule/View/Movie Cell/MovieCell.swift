@@ -28,8 +28,8 @@ class MovieCell: UITableViewCell, Reusable {
     private func setupView() {
         accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         selectionStyle = .none
-        contentView.backgroundColor = ColorProvider.white
         contentView.addSubview(movieView)
+        backgroundColor = UIColor.clear
     }
 
     private func setupConstraints() {
@@ -40,7 +40,6 @@ class MovieCell: UITableViewCell, Reusable {
         }
 
     }
-
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

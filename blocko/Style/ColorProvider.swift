@@ -10,18 +10,6 @@ struct ColorProvider {
 
     // MARK: - General -
 
-    static var standardBlueColor: UIColor {
-        return createColor(red: 67, green: 125, blue: 196, alpha: 1.0)
-    }
-
-    static var veryLightBlueColor: UIColor {
-        return createColor(red: 248, green: 252, blue: 254, alpha: 1.0)
-    }
-
-    static var tabBarBorderColor: UIColor {
-        return createColor(red: 212, green: 232, blue: 250, alpha: 1.0)
-    }
-
     static var white: UIColor {
         return UIColor.white
     }
@@ -48,6 +36,10 @@ struct ColorProvider {
 
     static var subtitle: UIColor {
         return ColorProvider.title.withAlphaComponent(0.8)
+    }
+
+    static var background: UIColor {
+        return UIColor(red: 0.26, green: 0.31, blue: 0.35, alpha: 1.00)
     }
 
     static var refreshControl: UIColor {

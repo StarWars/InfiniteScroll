@@ -18,12 +18,11 @@ class MoviesModuleView: BaseView {
     lazy var tableView: UITableView = {
         let view = UITableView()
 
-        view.backgroundColor = ColorProvider.lightColor
+        view.backgroundColor = ColorProvider.background
         view.register(cellType: MovieCell.self)
         view.rowHeight = UITableView.automaticDimension
         view.estimatedRowHeight = 44
-        view.separatorStyle = .singleLine
-        view.separatorInset = .zero
+        view.separatorStyle = .none
         view.refreshControl = refreshControl
 
         return view

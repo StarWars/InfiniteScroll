@@ -5,6 +5,7 @@
 
 // MARK: - Titles -
 "movies_module_title" = "Currently playing";
+"release_date_subtitle" = "Release date:";
 
 // MARK: - Errors & Notifications -
 "info_banner_title_success" = "Success";

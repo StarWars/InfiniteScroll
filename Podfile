@@ -12,7 +12,7 @@ target 'blocko' do
     pod 'Reusable'
     pod 'RxCocoa'
     pod 'RxSwift'
-    pod 'SDWebImage'
+    pod 'Kingfisher'
     pod 'SnapKit'
     pod 'SwiftLint'
 

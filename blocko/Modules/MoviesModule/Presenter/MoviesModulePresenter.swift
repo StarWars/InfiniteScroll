@@ -79,7 +79,7 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
     }
 
     func movie(at indexPath: IndexPath) -> Movie? {
-        guard movies.count < indexPath.row else {
+        guard indexPath.row < movies.count else {
             DDLogError("invalid index path item requested")
             return nil
         }

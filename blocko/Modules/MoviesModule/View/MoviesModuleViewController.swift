@@ -79,10 +79,8 @@ extension MoviesModuleViewController: UITableViewDataSource {
         let moviesCount = presenter.retrievedMovies.count
 
         if moviesCount == 0 {
-            tableView.separatorStyle = .none
             tableView.backgroundView = EmptyTableView(title: R.string.localizable.cta_empty_movies())
         } else {
-            tableView.separatorStyle = .singleLine
             tableView.backgroundView = nil
         }
 

@@ -15,7 +15,6 @@
 		9B137249BA15DB48CA63F743 /* MovieDetailsModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F08F66DF9EC4BFE89E5DCD5 /* MovieDetailsModulePresenter.swift */; };
 		A07907B80ABE8A71D5303C6E /* MoviesModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E7F26455C8B900F594E41D /* MoviesModulePresenter.swift */; };
 		BF0BA8AA213238820063D3E1 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA888213238820063D3E1 /* BaseButton.swift */; };
-		BF0BA8AB213238820063D3E1 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88A213238820063D3E1 /* CustomTabBar.swift */; };
 		BF0BA8AC213238820063D3E1 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88C213238820063D3E1 /* ForceCast.swift */; };
 		BF0BA8AD213238820063D3E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88D213238820063D3E1 /* Extensions.swift */; };
 		BF0BA8B3213238820063D3E1 /* BasePresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA89B213238820063D3E1 /* BasePresenterInput.swift */; };
@@ -78,7 +77,6 @@
 		B21AE3C85CCE2A1DB6DDD71D /* Pods-blocko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blocko.release.xcconfig"; path = "Pods/Target Support Files/Pods-blocko/Pods-blocko.release.xcconfig"; sourceTree = "<group>"; };
 		B7A86B544A339B2221AA4B40 /* Pods_blocko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blocko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0BA888213238820063D3E1 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
-		BF0BA88A213238820063D3E1 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		BF0BA88C213238820063D3E1 /* ForceCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
 		BF0BA88D213238820063D3E1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		BF0BA89B213238820063D3E1 /* BasePresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenterInput.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			children = (
 				94008A0FE5179714265CAAEA /* MovieDetailsModuleWireframe.swift */,
 			);
-			name = Wireframe;
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
@@ -178,7 +175,6 @@
 				E7523C9B5AB1231538ECB374 /* Interactor */,
 				41526408348BFC64CBBA5F58 /* Wireframe */,
 			);
-			name = MovieDetailsModule;
 			path = MovieDetailsModule;
 			sourceTree = "<group>";
 		};
@@ -196,17 +192,16 @@
 				271D88FCD7AEEF9CB1B4CEF7 /* MovieDetailsModuleViewController.swift */,
 				86948E60FBC8DB936F68FBA1 /* MovieDetailsModuleView.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
 		85137D6E9369218A4733CE5D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4078B8C3DAC7286F4DE0B3E8 /* MoviesModuleViewController.swift */,
-				1F902E9DC5D00969324368A2 /* MoviesModuleView.swift */,
-				BF35F1C724376FA70017B422 /* Movie Cell */,
 				BF35F1CD243774730017B422 /* EmptyTableView.swift */,
+				BF35F1C724376FA70017B422 /* Movie Cell */,
+				1F902E9DC5D00969324368A2 /* MoviesModuleView.swift */,
+				4078B8C3DAC7286F4DE0B3E8 /* MoviesModuleViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,7 +227,6 @@
 		BF0BA889213238820063D3E1 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				BF0BA88A213238820063D3E1 /* CustomTabBar.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -486,7 +480,6 @@
 			children = (
 				61A8823EE30BDC0FE7E9C23A /* MovieDetailsModuleInteractor.swift */,
 			);
-			name = Interactor;
 			path = Interactor;
 			sourceTree = "<group>";
 		};
@@ -495,7 +488,6 @@
 			children = (
 				5F08F66DF9EC4BFE89E5DCD5 /* MovieDetailsModulePresenter.swift */,
 			);
-			name = Presenter;
 			path = Presenter;
 			sourceTree = "<group>";
 		};
@@ -616,6 +608,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-blocko/Pods-blocko-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -623,13 +616,13 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
@@ -637,7 +630,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +645,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF35F1AB24369C620017B422 /* BlockoError.swift in Sources */,
-				BF0BA8AB213238820063D3E1 /* CustomTabBar.swift in Sources */,
 				BF35F1B8243761A20017B422 /* R.generated.swift in Sources */,
 				BF35F1B02436A19D0017B422 /* Connectivity.swift in Sources */,
 				BF0BA8B9213238820063D3E1 /* FontProvider.swift in Sources */,
