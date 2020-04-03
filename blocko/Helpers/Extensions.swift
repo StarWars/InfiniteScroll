@@ -14,6 +14,12 @@ extension UIView {
         }
         return self.snp
     }
+    
+    func roundedEdges(radius: CGFloat = 10) {
+        clipsToBounds = true
+        layer.cornerRadius = radius
+    }
+
 
 }
 

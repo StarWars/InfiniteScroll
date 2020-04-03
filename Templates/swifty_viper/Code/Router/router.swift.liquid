@@ -8,18 +8,14 @@ class {{ module_info.name }}Wireframe: BaseWireframe {
 
     class func setup{{ module_info.name }}() -> UIViewController {
         let wireframe = {{ module_info.name }}Wireframe()
-        let presenter = {{ module_info.name }}Presenter()
         let interactor = {{ module_info.name }}Interactor()
-        let viewController = {{ module_info.name }}ViewController()
+        let presenter = {{ module_info.name }}Presenter(interactor: interactor, wireframe: wireframe)
+        let viewController = {{ module_info.name }}ViewController(presenter: presenter)
 
         presenter.view = viewController
-        presenter.wireframe = wireframe
-        presenter.interactor = interactor
-
         interactor.output = presenter
 
         wireframe.currentViewController = viewController
-        viewController.output = presenter
 
         return viewController
     }

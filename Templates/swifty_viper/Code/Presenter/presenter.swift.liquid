@@ -1,6 +1,6 @@
 import Foundation
 
-protocol {{ module_info.name }}ViewOutput: BasePresenterInput {
+protocol {{ module_info.name }}PresenterInput: BasePresenterInput {
 
 }
 
@@ -11,14 +11,23 @@ protocol {{ module_info.name }}InteractorOutput: class {
 class {{ module_info.name }}Presenter {
 
     weak var view: {{ module_info.name }}ViewInput?
-    var interactor: {{ module_info.name }}InteractorInput?
-    var wireframe: {{ module_info.name }}WireframeInput?
-    var baseWireframe: BaseWireframeInput? { return wireframe }
+    let interactor: {{ module_info.name }}InteractorInput
+    let wireframe: {{ module_info.name }}WireframeInput
+
+    init(interactor: {{ module_info.name }}InteractorInput,
+         wireframe: {{ module_info.name }}WireframeInput) {
+        self.interactor = interactor
+        self.wireframe = wireframe
+    }
 
 }
 
-extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterInput {
 
+    var baseWireframe: BaseWireframeInput? {
+        return wireframe
+    }
+    
 }
 
 extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorOutput {

@@ -1,23 +1,23 @@
 import UIKit
 
-protocol {{ module_info.name }}ViewInput: class {
+protocol MovieDetailsModuleViewInput: class {
 
 }
 
-class {{ module_info.name }}ViewController: BaseViewController {
+class MovieDetailsModuleViewController: BaseViewController {
 
 	// MARK: - Constants -
 
 	// MARK: - Variables -
 
-	fileprivate var customView: {{ module_info.name }}View { return forceCast(view) }
-    let presenter: {{ module_info.name }}PresenterInput
+	fileprivate var customView: MovieDetailsModuleView { return forceCast(view) }
+    let presenter: MovieDetailsModulePresenterInput
 
 	// MARK: - Initialization -
 
     override init(presenter: BasePresenterInput) {
         //swiftlint:disable force_cast
-        self.presenter = presenter as! {{ module_info.name }}PresenterInput
+        self.presenter = presenter as! MovieDetailsModulePresenterInput
         //swiftlint:enable force_cast
         super.init(presenter: presenter)
     }
@@ -41,11 +41,11 @@ class {{ module_info.name }}ViewController: BaseViewController {
 	}
 
 	override func loadView() {
-		view = {{ module_info.name }}View()
+		view = MovieDetailsModuleView()
 	}
 
 }
 
-extension {{ module_info.name }}ViewController: {{module_info.name}}ViewInput {
+extension MovieDetailsModuleViewController: MovieDetailsModuleViewInput {
 
 }

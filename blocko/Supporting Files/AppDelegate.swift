@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupRootController() {
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let rootController = DashboardModuleWireframe.setupDashboardModule()
+        let rootController = MoviesModuleWireframe.setupMoviesModule()
         window?.rootViewController = UINavigationController(rootViewController: rootController)
         window?.makeKeyAndVisible()
     }

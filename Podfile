@@ -7,7 +7,9 @@ target 'blocko' do
 
     pod 'Alamofire'
     pod 'CocoaLumberjack/Swift'
+    pod 'NotificationBannerSwift'
     pod 'R.swift'
+    pod 'Reusable'
     pod 'RxCocoa'
     pod 'RxSwift'
     pod 'SDWebImage'

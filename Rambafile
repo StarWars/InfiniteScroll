@@ -15,16 +15,6 @@ project_file_path: blocko/Modules
 # The Xcode group path to new modules
 project_group_path: blocko/Modules
 
-### Tests generation settings section
-# The tests target name
-test_target: blockoTests
-
-# The file path for new tests
-test_file_path: blockoTests/Tests
-
-# The Xcode group path to new tests
-test_group_path: blockoTests/Tests
-
 ### Dependencies settings section
 podfile_path: Podfile
 

@@ -1,9 +1,11 @@
+import CocoaLumberjack
 import UIKit
 
 protocol BaseWireframeInput: class {
 
     func close()
     func back()
+    func present(_ vc: UIViewController)
 
 }
 
@@ -19,20 +21,20 @@ extension BaseWireframe: BaseWireframeInput {
         return currentViewController
     }
 
-}
-
-extension BaseWireframeInput {
-
-    var currentController: UIViewController? {
-        return nil
-    }
-
     func back() {
         currentController?.navigationController?.popViewController(animated: true)
     }
 
     func close() {
         currentController?.dismiss(animated: true, completion: nil)
+    }
+
+    func present(_ vc: UIViewController) {
+        vc.popoverPresentationController?.sourceView = vc.view
+        vc.popoverPresentationController?.sourceRect = vc.view.bounds
+        vc.popoverPresentationController?.permittedArrowDirections = [.down, .up]
+
+        currentController?.present(vc, animated: true, completion: nil)
     }
 
 }

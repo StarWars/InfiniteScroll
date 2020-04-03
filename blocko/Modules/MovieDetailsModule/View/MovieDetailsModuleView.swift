@@ -1,7 +1,7 @@
 import SnapKit
 import UIKit
 
-class {{ module_info.name }}View: BaseView {
+class MovieDetailsModuleView: BaseView {
 
 	// MARK: - Constants -
 
