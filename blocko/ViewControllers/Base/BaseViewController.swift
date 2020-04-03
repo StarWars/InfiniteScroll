@@ -34,20 +34,21 @@ class BaseViewController: UIViewController {
     func registerNotifications() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(notification:)),
-                                               name: .UIKeyboardWillShow,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillHide(notification:)),
-                                               name: .UIKeyboardWillHide,
+                                               name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
 
     @objc
     func keyboardWillShow(notification: NSNotification) {
-        var userInfo = notification.userInfo
-        guard let keyboardFrameValue = userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue,
-            let animationDuration = userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+        let userInfo = notification.userInfo
+
+        guard let keyboardFrameValue = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+            let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
                 return
         }
 
@@ -62,9 +63,9 @@ class BaseViewController: UIViewController {
 
     @objc
     func keyboardWillHide(notification: NSNotification) {
-        var userInfo = notification.userInfo
+        let userInfo = notification.userInfo
 
-        guard let animationDuration = userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+        guard let animationDuration = userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
             return
         }
 

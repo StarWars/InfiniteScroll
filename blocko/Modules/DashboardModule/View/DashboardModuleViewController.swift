@@ -1,7 +1,9 @@
 import UIKit
 
 protocol DashboardModuleViewInput: BaseViewInput {
-
+    func showLoadingIndicator()
+    func hideLoadingIndicator()
+    func reloadData()
 }
 
 class DashboardModuleViewController: BaseViewController {
@@ -10,7 +12,7 @@ class DashboardModuleViewController: BaseViewController {
 
 	// MARK: - Variables -
 
-	fileprivate var customView: DashboardModuleView { return forceCast(view) }
+	fileprivate var customView: DashboardModuleView { return forceCast(view as Any) }
 	var output: DashboardModuleViewOutput?
     override var basePresenter: BasePresenterInput? { return output }
 
@@ -37,5 +39,15 @@ class DashboardModuleViewController: BaseViewController {
 }
 
 extension DashboardModuleViewController: DashboardModuleViewInput {
+    func reloadData() {
+        
+    }
 
+    func showLoadingIndicator() {
+
+    }
+
+    func hideLoadingIndicator() {
+
+    }
 }

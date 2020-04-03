@@ -1,6 +1,12 @@
-import Crashlytics
-import Fabric
+import CocoaLumberjack
+import CoreData
 import UIKit
+
+#if DEBUG
+let ddloglevel = DDLogLevel.verbose
+#else
+let ddloglevel = DDLogLevel.off
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,10 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        setupThirdPartySDKs()
         setupRootController()
+        setupThirdPartySDKs()
 
         return true
     }
@@ -19,7 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - 3rd Party SDKs -
 
     private func setupThirdPartySDKs() {
-        Fabric.with([Crashlytics.self])
+        setupLoggers()
+    }
+
+    private func setupLoggers() {
+        let logger = DDOSLogger.sharedInstance
+        DDLog.add(logger)
+        dynamicLogLevel = ddloglevel
+        logger.logFormatter = LumberjackLogFormatter()
     }
 
     // MARK: - Navigation -
@@ -27,8 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupRootController() {
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let rootController = MainTabsModuleWireframe.setupMainTabsModule()
-        window?.rootViewController = rootController
+        let rootController = DashboardModuleWireframe.setupDashboardModule()
+        window?.rootViewController = UINavigationController(rootViewController: rootController)
         window?.makeKeyAndVisible()
     }
 

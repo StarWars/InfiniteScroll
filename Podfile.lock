@@ -1,32 +1,26 @@
 PODS:
-  - Alamofire (4.7.3)
-  - Crashlytics (3.10.7):
-    - Fabric (~> 1.7.11)
-  - Fabric (1.7.11)
-  - Lockbox (3.0.6)
-  - Nimble (7.0.3)
-  - ObjectMapper (3.3.0)
-  - Quick (1.3.1)
-  - R.swift (4.0.0):
-    - R.swift.Library (~> 4.0.0)
-  - R.swift.Library (4.0.0)
-  - RxCocoa (4.2.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
-  - SnapKit (4.0.0)
-  - SwiftLint (0.27.0)
+  - Alamofire (5.0.5)
+  - CocoaLumberjack/Core (3.6.1)
+  - CocoaLumberjack/Swift (3.6.1):
+    - CocoaLumberjack/Core
+  - R.swift (5.1.0):
+    - R.swift.Library (~> 5.1.0)
+  - R.swift.Library (5.1.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
+  - SnapKit (5.0.1)
+  - SwiftLint (0.39.1)
 
 DEPENDENCIES:
   - Alamofire
-  - Crashlytics
-  - Fabric
-  - Lockbox
-  - Nimble (~> 7.0.2)
-  - ObjectMapper
-  - Quick (~> 1.2)
+  - CocoaLumberjack/Swift
   - R.swift
   - RxCocoa
   - RxSwift
@@ -35,38 +29,30 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
-    - Crashlytics
-    - Fabric
-    - Lockbox
-    - Nimble
-    - ObjectMapper
-    - Quick
+    - CocoaLumberjack
     - R.swift
     - R.swift.Library
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SDWebImage
     - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
-  Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
-  Lockbox: 4291a0b8b1aed35474881c4e592961dec3ca695e
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  Quick: d17304d58d0d169dd0bd1c6e5c28e3318de32a1a
-  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
-  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
+  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
+  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLint: 55e96a4a4d537d4a3156859fc1c54bd24851a046
 
-PODFILE CHECKSUM: ee3125a8838e07fb8c2a4370f2e2f6b4062b47f8
+PODFILE CHECKSUM: 21e1dbc5dbf6ccf0f0c5ce9ace8c1c8a7c42e321
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1

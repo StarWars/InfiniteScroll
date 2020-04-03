@@ -7,23 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D4F8CBEAC62827FE1557945 /* Pods_blocko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE19B17979B0270DD303E550 /* Pods_blocko.framework */; };
 		34F4F4D7BC8CE37FA180B400 /* DashboardModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3131B216C45BC1724B0DE6E7 /* DashboardModuleInteractor.swift */; };
-		3DEFE333D018B4A6C4DFF039 /* DashboardModuleInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F793C923B38EF4F6CF7CE0 /* DashboardModuleInteractorTests.swift */; };
-		81D92641E1DF6315BC2228A9 /* DashboardModulePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443A9BAC6FD22A1E4BB23CBC /* DashboardModulePresenterTests.swift */; };
 		95A5C5C9A03B82A53CAD2B0B /* DashboardModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEE98FD9C1ED5F8CCD3FB78 /* DashboardModuleView.swift */; };
 		A01346FFC35D8AD3FBFDD3F8 /* DashboardModuleWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D75F5ACCE8A3518B0E9AF /* DashboardModuleWireframe.swift */; };
-		A9089C2251C19E2297E2E0B3 /* Pods_blockoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18060FC7FDF7C8C75B1C920 /* Pods_blockoTests.framework */; };
 		B70097378E649EDAFACAE358 /* DashboardModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F62872D719EAB14030C0A5 /* DashboardModuleViewController.swift */; };
 		BF0BA8AA213238820063D3E1 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA888213238820063D3E1 /* BaseButton.swift */; };
 		BF0BA8AB213238820063D3E1 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88A213238820063D3E1 /* CustomTabBar.swift */; };
 		BF0BA8AC213238820063D3E1 /* ForceCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88C213238820063D3E1 /* ForceCast.swift */; };
 		BF0BA8AD213238820063D3E1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA88D213238820063D3E1 /* Extensions.swift */; };
-		BF0BA8AE213238820063D3E1 /* MainTabsModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA891213238820063D3E1 /* MainTabsModulePresenter.swift */; };
-		BF0BA8AF213238820063D3E1 /* MainTabsModuleWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA893213238820063D3E1 /* MainTabsModuleWireframe.swift */; };
-		BF0BA8B0213238820063D3E1 /* MainTabsModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA895213238820063D3E1 /* MainTabsModuleViewController.swift */; };
-		BF0BA8B1213238820063D3E1 /* MainTabsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA896213238820063D3E1 /* MainTabsModuleView.swift */; };
-		BF0BA8B2213238820063D3E1 /* MainTabsModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA898213238820063D3E1 /* MainTabsModuleInteractor.swift */; };
 		BF0BA8B3213238820063D3E1 /* BasePresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA89B213238820063D3E1 /* BasePresenterInput.swift */; };
 		BF0BA8B4213238820063D3E1 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA89D213238820063D3E1 /* BaseWireframe.swift */; };
 		BF0BA8B5213238820063D3E1 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA89F213238820063D3E1 /* BaseCollectionViewCell.swift */; };
@@ -34,33 +25,27 @@
 		BF0BA8BA213238820063D3E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA8A8213238820063D3E1 /* BaseViewController.swift */; };
 		BF0BA8BB213238820063D3E1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0BA8A9213238820063D3E1 /* NavigationController.swift */; };
 		BF3084D3213243220022D6A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BF3084D2213243220022D6A7 /* Localizable.strings */; };
-		BF3084D5213243A00022D6A7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3084D4213243A00022D6A7 /* R.generated.swift */; };
+		BF35F19224369AC40017B422 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F19124369AC40017B422 /* R.generated.swift */; };
+		BF35F1A324369C620017B422 /* APIErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F19424369C620017B422 /* APIErrorCode.swift */; };
+		BF35F1A424369C620017B422 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F19524369C620017B422 /* APIClient.swift */; };
+		BF35F1A524369C620017B422 /* ServerInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF35F19624369C620017B422 /* ServerInformation.plist */; };
+		BF35F1A724369C620017B422 /* MovieNowPlayingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F19924369C620017B422 /* MovieNowPlayingResponse.swift */; };
+		BF35F1A824369C620017B422 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F19B24369C620017B422 /* BaseRequest.swift */; };
+		BF35F1AA24369C620017B422 /* MovieNowPlayingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F19F24369C620017B422 /* MovieNowPlayingRequest.swift */; };
+		BF35F1AB24369C620017B422 /* BlockoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1A024369C620017B422 /* BlockoError.swift */; };
+		BF35F1AC24369C620017B422 /* BaseInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1A224369C620017B422 /* BaseInteractorProtocol.swift */; };
+		BF35F1B02436A19D0017B422 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1AF2436A19D0017B422 /* Connectivity.swift */; };
+		BF35F1B22436A30B0017B422 /* LumberjackLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1B12436A30B0017B422 /* LumberjackLogFormatter.swift */; };
+		BF35F1B42436A3380017B422 /* EnumEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1B32436A3380017B422 /* EnumEntities.swift */; };
+		BF35F1B62436A7920017B422 /* BaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1B52436A7920017B422 /* BaseProvider.swift */; };
 		BFE1FCDA21322B66005EE8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCD921322B66005EE8CD /* AppDelegate.swift */; };
 		BFE1FCDC21322B66005EE8CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCDB21322B66005EE8CD /* ViewController.swift */; };
 		BFE1FCDF21322B66005EE8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE1FCDD21322B66005EE8CD /* Main.storyboard */; };
 		BFE1FCE121322B6B005EE8CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE1FCE021322B6B005EE8CD /* Assets.xcassets */; };
 		BFE1FCE421322B6B005EE8CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE1FCE221322B6B005EE8CD /* LaunchScreen.storyboard */; };
-		BFE1FCEF21322B6C005EE8CD /* blockoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCEE21322B6C005EE8CD /* blockoTests.swift */; };
-		BFE1FCFA21322B6C005EE8CD /* blockoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCF921322B6C005EE8CD /* blockoUITests.swift */; };
 		C15DDAC2C995977E8E30EA78 /* DashboardModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C985AC39BFBEB60F0C271B /* DashboardModulePresenter.swift */; };
+		F2B5BFFA170BB1717B95E0D0 /* Pods_blocko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A86B544A339B2221AA4B40 /* Pods_blocko.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BFE1FCEB21322B6C005EE8CD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFE1FCCE21322B66005EE8CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BFE1FCD521322B66005EE8CD;
-			remoteInfo = blocko;
-		};
-		BFE1FCF621322B6C005EE8CD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFE1FCCE21322B66005EE8CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BFE1FCD521322B66005EE8CD;
-			remoteInfo = blocko;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01B704D810E1821B2BC0A327 /* Pods-blockoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blockoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-blockoTests/Pods-blockoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,15 +59,11 @@
 		9CEE98FD9C1ED5F8CCD3FB78 /* DashboardModuleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleView.swift; sourceTree = "<group>"; };
 		B21AE3C85CCE2A1DB6DDD71D /* Pods-blocko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-blocko.release.xcconfig"; path = "Pods/Target Support Files/Pods-blocko/Pods-blocko.release.xcconfig"; sourceTree = "<group>"; };
 		B3F62872D719EAB14030C0A5 /* DashboardModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleViewController.swift; sourceTree = "<group>"; };
+		B7A86B544A339B2221AA4B40 /* Pods_blocko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blocko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0BA888213238820063D3E1 /* BaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		BF0BA88A213238820063D3E1 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		BF0BA88C213238820063D3E1 /* ForceCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceCast.swift; sourceTree = "<group>"; };
 		BF0BA88D213238820063D3E1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		BF0BA891213238820063D3E1 /* MainTabsModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabsModulePresenter.swift; sourceTree = "<group>"; };
-		BF0BA893213238820063D3E1 /* MainTabsModuleWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabsModuleWireframe.swift; sourceTree = "<group>"; };
-		BF0BA895213238820063D3E1 /* MainTabsModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabsModuleViewController.swift; sourceTree = "<group>"; };
-		BF0BA896213238820063D3E1 /* MainTabsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabsModuleView.swift; sourceTree = "<group>"; };
-		BF0BA898213238820063D3E1 /* MainTabsModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabsModuleInteractor.swift; sourceTree = "<group>"; };
 		BF0BA89B213238820063D3E1 /* BasePresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenterInput.swift; sourceTree = "<group>"; };
 		BF0BA89D213238820063D3E1 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
 		BF0BA89F213238820063D3E1 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -93,7 +74,19 @@
 		BF0BA8A8213238820063D3E1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BF0BA8A9213238820063D3E1 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		BF3084D2213243220022D6A7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		BF3084D4213243A00022D6A7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		BF35F19124369AC40017B422 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "Supporting Files/R.generated.swift"; sourceTree = SOURCE_ROOT; };
+		BF35F19424369C620017B422 /* APIErrorCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorCode.swift; sourceTree = "<group>"; };
+		BF35F19524369C620017B422 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BF35F19624369C620017B422 /* ServerInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServerInformation.plist; sourceTree = "<group>"; };
+		BF35F19924369C620017B422 /* MovieNowPlayingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieNowPlayingResponse.swift; path = ../MovieNowPlayingResponse.swift; sourceTree = "<group>"; };
+		BF35F19B24369C620017B422 /* BaseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		BF35F19F24369C620017B422 /* MovieNowPlayingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieNowPlayingRequest.swift; sourceTree = "<group>"; };
+		BF35F1A024369C620017B422 /* BlockoError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockoError.swift; sourceTree = "<group>"; };
+		BF35F1A224369C620017B422 /* BaseInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractorProtocol.swift; sourceTree = "<group>"; };
+		BF35F1AF2436A19D0017B422 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		BF35F1B12436A30B0017B422 /* LumberjackLogFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumberjackLogFormatter.swift; sourceTree = "<group>"; };
+		BF35F1B32436A3380017B422 /* EnumEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumEntities.swift; sourceTree = "<group>"; };
+		BF35F1B52436A7920017B422 /* BaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProvider.swift; sourceTree = "<group>"; };
 		BFE1FCD621322B66005EE8CD /* blocko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blocko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE1FCD921322B66005EE8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFE1FCDB21322B66005EE8CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,14 +94,10 @@
 		BFE1FCE021322B6B005EE8CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFE1FCE321322B6B005EE8CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFE1FCE521322B6B005EE8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFE1FCEA21322B6C005EE8CD /* blockoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blockoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE1FCEE21322B6C005EE8CD /* blockoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockoTests.swift; sourceTree = "<group>"; };
 		BFE1FCF021322B6C005EE8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFE1FCF521322B6C005EE8CD /* blockoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blockoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE1FCF921322B6C005EE8CD /* blockoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockoUITests.swift; sourceTree = "<group>"; };
 		BFE1FCFB21322B6C005EE8CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C18060FC7FDF7C8C75B1C920 /* Pods_blockoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blockoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE19B17979B0270DD303E550 /* Pods_blocko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_blocko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,34 +105,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D4F8CBEAC62827FE1557945 /* Pods_blocko.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFE1FCE721322B6C005EE8CD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9089C2251C19E2297E2E0B3 /* Pods_blockoTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFE1FCF221322B6C005EE8CD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F2B5BFFA170BB1717B95E0D0 /* Pods_blocko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0299C12C4138DC8771A847FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7A86B544A339B2221AA4B40 /* Pods_blocko.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0CB133226B57A3B156A5B3EC /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				F948072B02337187981BFB6B /* DashboardModule */,
 			);
-			name = Tests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
@@ -166,7 +147,6 @@
 				D369805061865402D2C55A90 /* Interactor */,
 				ACF139C9CF7A73B0F3F3BC07 /* Wireframe */,
 			);
-			name = DashboardModule;
 			path = DashboardModule;
 			sourceTree = "<group>";
 		};
@@ -175,7 +155,6 @@
 			children = (
 				32C985AC39BFBEB60F0C271B /* DashboardModulePresenter.swift */,
 			);
-			name = Presenter;
 			path = Presenter;
 			sourceTree = "<group>";
 		};
@@ -184,7 +163,6 @@
 			children = (
 				443A9BAC6FD22A1E4BB23CBC /* DashboardModulePresenterTests.swift */,
 			);
-			name = Presenter;
 			path = Presenter;
 			sourceTree = "<group>";
 		};
@@ -194,7 +172,6 @@
 				B3F62872D719EAB14030C0A5 /* DashboardModuleViewController.swift */,
 				9CEE98FD9C1ED5F8CCD3FB78 /* DashboardModuleView.swift */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -203,7 +180,6 @@
 			children = (
 				9C8D75F5ACCE8A3518B0E9AF /* DashboardModuleWireframe.swift */,
 			);
-			name = Wireframe;
 			path = Wireframe;
 			sourceTree = "<group>";
 		};
@@ -237,6 +213,8 @@
 			children = (
 				BF0BA88D213238820063D3E1 /* Extensions.swift */,
 				BF0BA88C213238820063D3E1 /* ForceCast.swift */,
+				BF35F1B12436A30B0017B422 /* LumberjackLogFormatter.swift */,
+				BF35F1B32436A3380017B422 /* EnumEntities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -245,54 +223,9 @@
 			isa = PBXGroup;
 			children = (
 				BF0BA899213238820063D3E1 /* Base */,
-				BF0BA88F213238820063D3E1 /* MainTabsModule */,
 				60D052D24F5688B7A4CF1376 /* DashboardModule */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		BF0BA88F213238820063D3E1 /* MainTabsModule */ = {
-			isa = PBXGroup;
-			children = (
-				BF0BA897213238820063D3E1 /* Interactor */,
-				BF0BA890213238820063D3E1 /* Presenter */,
-				BF0BA894213238820063D3E1 /* View */,
-				BF0BA892213238820063D3E1 /* Wireframe */,
-			);
-			path = MainTabsModule;
-			sourceTree = "<group>";
-		};
-		BF0BA890213238820063D3E1 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				BF0BA891213238820063D3E1 /* MainTabsModulePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		BF0BA892213238820063D3E1 /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				BF0BA893213238820063D3E1 /* MainTabsModuleWireframe.swift */,
-			);
-			path = Wireframe;
-			sourceTree = "<group>";
-		};
-		BF0BA894213238820063D3E1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BF0BA896213238820063D3E1 /* MainTabsModuleView.swift */,
-				BF0BA895213238820063D3E1 /* MainTabsModuleViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		BF0BA897213238820063D3E1 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				BF0BA898213238820063D3E1 /* MainTabsModuleInteractor.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		BF0BA899213238820063D3E1 /* Base */ = {
@@ -365,16 +298,81 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		BF35F19324369C620017B422 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F19524369C620017B422 /* APIClient.swift */,
+				BF35F19424369C620017B422 /* APIErrorCode.swift */,
+				BF35F1A024369C620017B422 /* BlockoError.swift */,
+				BF35F1A124369C620017B422 /* Protocols */,
+				BF35F19A24369C620017B422 /* Requests */,
+				BF35F19724369C620017B422 /* Responses */,
+				BF35F19624369C620017B422 /* ServerInformation.plist */,
+				BF35F1AE2436A1920017B422 /* Tools */,
+				BF35F1B52436A7920017B422 /* BaseProvider.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BF35F19724369C620017B422 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F1AD24369E8F0017B422 /* NowPlaying */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		BF35F19A24369C620017B422 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F19B24369C620017B422 /* BaseRequest.swift */,
+				BF35F19E24369C620017B422 /* NowPlaying */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		BF35F19E24369C620017B422 /* NowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F19F24369C620017B422 /* MovieNowPlayingRequest.swift */,
+			);
+			path = NowPlaying;
+			sourceTree = "<group>";
+		};
+		BF35F1A124369C620017B422 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F1A224369C620017B422 /* BaseInteractorProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BF35F1AD24369E8F0017B422 /* NowPlaying */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F19924369C620017B422 /* MovieNowPlayingResponse.swift */,
+			);
+			path = NowPlaying;
+			sourceTree = "<group>";
+		};
+		BF35F1AE2436A1920017B422 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F1AF2436A19D0017B422 /* Connectivity.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		BF41E4EF2132376200943DA3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BF3084D4213243A00022D6A7 /* R.generated.swift */,
-				BF3084D2213243220022D6A7 /* Localizable.strings */,
 				BFE1FCD921322B66005EE8CD /* AppDelegate.swift */,
 				BFE1FCE021322B6B005EE8CD /* Assets.xcassets */,
 				BFE1FCE521322B6B005EE8CD /* Info.plist */,
 				BFE1FCE221322B6B005EE8CD /* LaunchScreen.storyboard */,
+				BF3084D2213243220022D6A7 /* Localizable.strings */,
 				BFE1FCDD21322B66005EE8CD /* Main.storyboard */,
+				BF35F19124369AC40017B422 /* R.generated.swift */,
 				BFE1FCDB21322B66005EE8CD /* ViewController.swift */,
 			);
 			path = "Supporting Files";
@@ -383,12 +381,12 @@
 		BFE1FCCD21322B66005EE8CD = {
 			isa = PBXGroup;
 			children = (
-				D4CC7F1DCB5918F1DC2C4A64 /* Frameworks */,
-				35B2FA27C52DE5B7569AA161 /* Pods */,
-				BFE1FCD721322B66005EE8CD /* Products */,
 				BFE1FCD821322B66005EE8CD /* blocko */,
 				BFE1FCED21322B6C005EE8CD /* blockoTests */,
 				BFE1FCF821322B6C005EE8CD /* blockoUITests */,
+				35B2FA27C52DE5B7569AA161 /* Pods */,
+				BFE1FCD721322B66005EE8CD /* Products */,
+				0299C12C4138DC8771A847FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,8 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				BFE1FCD621322B66005EE8CD /* blocko.app */,
-				BFE1FCEA21322B6C005EE8CD /* blockoTests.xctest */,
-				BFE1FCF521322B6C005EE8CD /* blockoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -405,6 +401,7 @@
 		BFE1FCD821322B66005EE8CD /* blocko */ = {
 			isa = PBXGroup;
 			children = (
+				BF35F19324369C620017B422 /* API */,
 				BF0BA886213238820063D3E1 /* CustomView */,
 				BF0BA88B213238820063D3E1 /* Helpers */,
 				BF0BA88E213238820063D3E1 /* Modules */,
@@ -439,17 +436,7 @@
 			children = (
 				3131B216C45BC1724B0DE6E7 /* DashboardModuleInteractor.swift */,
 			);
-			name = Interactor;
 			path = Interactor;
-			sourceTree = "<group>";
-		};
-		D4CC7F1DCB5918F1DC2C4A64 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FE19B17979B0270DD303E550 /* Pods_blocko.framework */,
-				C18060FC7FDF7C8C75B1C920 /* Pods_blockoTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E4CC463DCB0927DBA271664B /* Interactor */ = {
@@ -457,7 +444,6 @@
 			children = (
 				44F793C923B38EF4F6CF7CE0 /* DashboardModuleInteractorTests.swift */,
 			);
-			name = Interactor;
 			path = Interactor;
 			sourceTree = "<group>";
 		};
@@ -467,7 +453,6 @@
 				E4CC463DCB0927DBA271664B /* Interactor */,
 				85219A9438AA79E9F83B3D71 /* Presenter */,
 			);
-			name = DashboardModule;
 			path = DashboardModule;
 			sourceTree = "<group>";
 		};
@@ -484,7 +469,6 @@
 				BFE1FCD321322B66005EE8CD /* Frameworks */,
 				BFE1FCD421322B66005EE8CD /* Resources */,
 				EB19482FB2E623432165F320 /* [CP] Embed Pods Frameworks */,
-				BF3084D021323FFD0022D6A7 /* Fabric - Answers */,
 			);
 			buildRules = (
 			);
@@ -494,44 +478,6 @@
 			productName = blocko;
 			productReference = BFE1FCD621322B66005EE8CD /* blocko.app */;
 			productType = "com.apple.product-type.application";
-		};
-		BFE1FCE921322B6C005EE8CD /* blockoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BFE1FD0121322B6C005EE8CD /* Build configuration list for PBXNativeTarget "blockoTests" */;
-			buildPhases = (
-				C023710A3F5091F5DCC9682C /* [CP] Check Pods Manifest.lock */,
-				BFE1FCE621322B6C005EE8CD /* Sources */,
-				BFE1FCE721322B6C005EE8CD /* Frameworks */,
-				BFE1FCE821322B6C005EE8CD /* Resources */,
-				037E8C763EF694C8B368D723 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BFE1FCEC21322B6C005EE8CD /* PBXTargetDependency */,
-			);
-			name = blockoTests;
-			productName = blockoTests;
-			productReference = BFE1FCEA21322B6C005EE8CD /* blockoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		BFE1FCF421322B6C005EE8CD /* blockoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BFE1FD0421322B6C005EE8CD /* Build configuration list for PBXNativeTarget "blockoUITests" */;
-			buildPhases = (
-				BFE1FCF121322B6C005EE8CD /* Sources */,
-				BFE1FCF221322B6C005EE8CD /* Frameworks */,
-				BFE1FCF321322B6C005EE8CD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BFE1FCF721322B6C005EE8CD /* PBXTargetDependency */,
-			);
-			name = blockoUITests;
-			productName = blockoUITests;
-			productReference = BFE1FCF521322B6C005EE8CD /* blockoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -545,17 +491,8 @@
 				TargetAttributes = {
 					BFE1FCD521322B66005EE8CD = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
-					};
-					BFE1FCE921322B6C005EE8CD = {
-						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = BFE1FCD521322B66005EE8CD;
-					};
-					BFE1FCF421322B6C005EE8CD = {
-						CreatedOnToolsVersion = 9.4.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = BFE1FCD521322B66005EE8CD;
 					};
 				};
 			};
@@ -573,8 +510,6 @@
 			projectRoot = "";
 			targets = (
 				BFE1FCD521322B66005EE8CD /* blocko */,
-				BFE1FCE921322B6C005EE8CD /* blockoTests */,
-				BFE1FCF421322B6C005EE8CD /* blockoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -586,48 +521,15 @@
 			files = (
 				BFE1FCE421322B6B005EE8CD /* LaunchScreen.storyboard in Resources */,
 				BF3084D3213243220022D6A7 /* Localizable.strings in Resources */,
+				BF35F1A524369C620017B422 /* ServerInformation.plist in Resources */,
 				BFE1FCE121322B6B005EE8CD /* Assets.xcassets in Resources */,
 				BFE1FCDF21322B66005EE8CD /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFE1FCE821322B6C005EE8CD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFE1FCF321322B6C005EE8CD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		037E8C763EF694C8B368D723 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-blockoTests/Pods-blockoTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-blockoTests/Pods-blockoTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		11B8C4222DD4B1580F34B652 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -646,51 +548,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF3084D021323FFD0022D6A7 /* Fabric - Answers */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Fabric - Answers";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run cd3588aa6c07284fc75b2b0c14b6f6df2176f525 45fd83b81f787781c74972f30e28077b62a48457d3259dd32419f07b6a3d9512";
-		};
 		BF3084D1213242900022D6A7 /* R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
 			name = R.swift;
 			outputPaths = (
+				"$SRCROOT/Supporting Files/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
-		};
-		C023710A3F5091F5DCC9682C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-blockoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Supporting Files/R.generated.swift\"\n";
 		};
 		EB19482FB2E623432165F320 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -698,12 +570,12 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-blocko/Pods-blocko-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-blocko/Pods-blocko-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Lockbox/Lockbox.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -711,17 +583,17 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lockbox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-blocko/Pods-blocko-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-blocko/Pods-blocko-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -731,67 +603,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF35F1AB24369C620017B422 /* BlockoError.swift in Sources */,
 				BF0BA8AB213238820063D3E1 /* CustomTabBar.swift in Sources */,
+				BF35F1B02436A19D0017B422 /* Connectivity.swift in Sources */,
 				BF0BA8B9213238820063D3E1 /* FontProvider.swift in Sources */,
 				BF0BA8B5213238820063D3E1 /* BaseCollectionViewCell.swift in Sources */,
-				BF0BA8B0213238820063D3E1 /* MainTabsModuleViewController.swift in Sources */,
+				BF35F1A824369C620017B422 /* BaseRequest.swift in Sources */,
 				BF0BA8BA213238820063D3E1 /* BaseViewController.swift in Sources */,
 				BF0BA8B6213238820063D3E1 /* BaseViewInput.swift in Sources */,
-				BF0BA8B2213238820063D3E1 /* MainTabsModuleInteractor.swift in Sources */,
+				BF35F1AA24369C620017B422 /* MovieNowPlayingRequest.swift in Sources */,
 				BF0BA8B4213238820063D3E1 /* BaseWireframe.swift in Sources */,
-				BF3084D5213243A00022D6A7 /* R.generated.swift in Sources */,
 				BF0BA8AD213238820063D3E1 /* Extensions.swift in Sources */,
 				BF0BA8AC213238820063D3E1 /* ForceCast.swift in Sources */,
 				BFE1FCDC21322B66005EE8CD /* ViewController.swift in Sources */,
+				BF35F1A724369C620017B422 /* MovieNowPlayingResponse.swift in Sources */,
 				BF0BA8B8213238820063D3E1 /* ColorProvider.swift in Sources */,
-				BF0BA8B1213238820063D3E1 /* MainTabsModuleView.swift in Sources */,
 				BF0BA8B7213238820063D3E1 /* BaseInteractorInput.swift in Sources */,
-				BF0BA8AE213238820063D3E1 /* MainTabsModulePresenter.swift in Sources */,
+				BF35F1AC24369C620017B422 /* BaseInteractorProtocol.swift in Sources */,
+				BF35F1B62436A7920017B422 /* BaseProvider.swift in Sources */,
+				BF35F1A424369C620017B422 /* APIClient.swift in Sources */,
+				BF35F1A324369C620017B422 /* APIErrorCode.swift in Sources */,
+				BF35F1B42436A3380017B422 /* EnumEntities.swift in Sources */,
 				BF0BA8AA213238820063D3E1 /* BaseButton.swift in Sources */,
 				BFE1FCDA21322B66005EE8CD /* AppDelegate.swift in Sources */,
 				BF0BA8BB213238820063D3E1 /* NavigationController.swift in Sources */,
 				BF0BA8B3213238820063D3E1 /* BasePresenterInput.swift in Sources */,
-				BF0BA8AF213238820063D3E1 /* MainTabsModuleWireframe.swift in Sources */,
+				BF35F19224369AC40017B422 /* R.generated.swift in Sources */,
 				B70097378E649EDAFACAE358 /* DashboardModuleViewController.swift in Sources */,
 				95A5C5C9A03B82A53CAD2B0B /* DashboardModuleView.swift in Sources */,
 				C15DDAC2C995977E8E30EA78 /* DashboardModulePresenter.swift in Sources */,
 				34F4F4D7BC8CE37FA180B400 /* DashboardModuleInteractor.swift in Sources */,
+				BF35F1B22436A30B0017B422 /* LumberjackLogFormatter.swift in Sources */,
 				A01346FFC35D8AD3FBFDD3F8 /* DashboardModuleWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BFE1FCE621322B6C005EE8CD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFE1FCEF21322B6C005EE8CD /* blockoTests.swift in Sources */,
-				3DEFE333D018B4A6C4DFF039 /* DashboardModuleInteractorTests.swift in Sources */,
-				81D92641E1DF6315BC2228A9 /* DashboardModulePresenterTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFE1FCF121322B6C005EE8CD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFE1FCFA21322B6C005EE8CD /* blockoUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BFE1FCEC21322B6C005EE8CD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BFE1FCD521322B66005EE8CD /* blocko */;
-			targetProxy = BFE1FCEB21322B6C005EE8CD /* PBXContainerItemProxy */;
-		};
-		BFE1FCF721322B6C005EE8CD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BFE1FCD521322B66005EE8CD /* blocko */;
-			targetProxy = BFE1FCF621322B6C005EE8CD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BFE1FCDD21322B66005EE8CD /* Main.storyboard */ = {
@@ -866,7 +713,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -920,7 +767,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -938,9 +785,9 @@
 				INFOPLIST_FILE = "$(SRCROOT)/blocko/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.blocko;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.dxcchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -955,78 +802,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/blocko/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.blocko;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.dxcchallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		BFE1FD0221322B6C005EE8CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48363E652CFAB952AD6F321A /* Pods-blockoTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2GL93NK9CK;
-				INFOPLIST_FILE = blockoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.blockoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blocko.app/blocko";
-			};
-			name = Debug;
-		};
-		BFE1FD0321322B6C005EE8CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 01B704D810E1821B2BC0A327 /* Pods-blockoTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2GL93NK9CK;
-				INFOPLIST_FILE = blockoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.blockoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blocko.app/blocko";
-			};
-			name = Release;
-		};
-		BFE1FD0521322B6C005EE8CD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2GL93NK9CK;
-				INFOPLIST_FILE = blockoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.blockoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = blocko;
-			};
-			name = Debug;
-		};
-		BFE1FD0621322B6C005EE8CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2GL93NK9CK;
-				INFOPLIST_FILE = blockoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.blockoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = blocko;
 			};
 			name = Release;
 		};
@@ -1047,24 +826,6 @@
 			buildConfigurations = (
 				BFE1FCFF21322B6C005EE8CD /* Debug */,
 				BFE1FD0021322B6C005EE8CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BFE1FD0121322B6C005EE8CD /* Build configuration list for PBXNativeTarget "blockoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BFE1FD0221322B6C005EE8CD /* Debug */,
-				BFE1FD0321322B6C005EE8CD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BFE1FD0421322B6C005EE8CD /* Build configuration list for PBXNativeTarget "blockoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BFE1FD0521322B6C005EE8CD /* Debug */,
-				BFE1FD0621322B6C005EE8CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

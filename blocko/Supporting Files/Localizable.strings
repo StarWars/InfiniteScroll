@@ -1,4 +1,14 @@
-
 // MARK: - General -
-
 "general_alert_ok" = "Ok";
+
+// MARK: - Errors -
+"no_internet_connection" = "no internet connection";
+"unknown_reason" = "unknown reason";
+"connection_timeout" = "connection timeout";
+"connection_refused" = "connection refused";
+"empty_content" = "empty response from the server";
+"unknown_reason" = "unknown error";
+"add_comment_alert_message_already_added" = "item is already added";
+"unauthorized_api_access" = "unauthorized API access";
+"no_error" =  "no error";
+
