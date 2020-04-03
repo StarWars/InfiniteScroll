@@ -16,7 +16,7 @@ class BaseView: UIView {
 
     public init() {
         super.init(frame: .zero)
-        backgroundColor = ColorProvider.lightColor
+        backgroundColor = ColorProvider.white
         loadView()
     }
 

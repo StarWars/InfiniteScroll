@@ -20,7 +20,7 @@ class EmptyTableView: UIView {
 
     public init(title: String?) {
         super.init(frame: .zero)
-        backgroundColor = ColorProvider.lightColor
+        backgroundColor = ColorProvider.background
         self.title.text = title
         setupView()
         setupConstraints()
@@ -35,6 +35,10 @@ class EmptyTableView: UIView {
     }
 
     private func setupConstraints() {
+        snp.makeConstraints { make in
+            make.width.greaterThanOrEqualTo(0)
+        }
+
         title.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(kMargin)
             make.centerY.equalToSuperview()

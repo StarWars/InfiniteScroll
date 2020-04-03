@@ -7,6 +7,7 @@ class BlurredView: BaseView {
 
     override func setupSubviews() {
         backgroundColor = .clear
+
         addSubview(blurView)
     }
 

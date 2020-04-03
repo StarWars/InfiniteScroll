@@ -2,7 +2,7 @@ import CocoaLumberjack
 import Kingfisher
 import UIKit
 
-class MovieCellView: UIView, MovieCellConfiguration {
+class MovieCellView: UIView, MovieConfiguration {
 
     // MARK: - Constants -
     private let kDefaultInset: CGFloat = 8
@@ -16,7 +16,7 @@ class MovieCellView: UIView, MovieCellConfiguration {
     public lazy var cellBackground: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
-        view.roundedEdges()
+        view.roundedEdges(radius: 14)
         return view
     }()
 
@@ -69,7 +69,7 @@ class MovieCellView: UIView, MovieCellConfiguration {
 
         cellBackground.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(kDefaultInset)
-            make.top.bottom.equalToSuperview().inset(kDefaultInset / 2.0)
+            make.top.bottom.equalToSuperview().inset(kDefaultInset)
             make.height.equalTo(kCellHeight)
         }
 

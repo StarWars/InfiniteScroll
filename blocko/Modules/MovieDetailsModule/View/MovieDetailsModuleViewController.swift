@@ -31,9 +31,14 @@ class MovieDetailsModuleViewController: BaseViewController {
 		setupView()
 		setupActions()
 	}
+    override func setupNavigationBar() {
+        super.setupNavigationBar()
+        createXButton()
+    }
 
 	private func setupView() {
-
+        title = presenter.movie.title
+        customView.setup(with: presenter.movie)
 	}
 
 	private func setupActions() {
@@ -43,6 +48,10 @@ class MovieDetailsModuleViewController: BaseViewController {
 	override func loadView() {
 		view = MovieDetailsModuleView()
 	}
+
+    override func xButtonSelected() {
+        presenter.closePressed()
+    }
 
 }
 

@@ -7,9 +7,9 @@ class MoviesModuleView: BaseView {
         let view = UIRefreshControl()
 
         let attributes = [NSAttributedString.Key.font: FontProvider.standard.withSize(11),
-                          NSAttributedString.Key.foregroundColor: ColorProvider.black]
+                          NSAttributedString.Key.foregroundColor: ColorProvider.white]
 
-        view.tintColor = ColorProvider.black
+        view.tintColor = ColorProvider.white
         view.attributedTitle = NSAttributedString(string: R.string.localizable.fetching_movies(), attributes: attributes)
 
         return view

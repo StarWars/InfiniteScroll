@@ -40,6 +40,7 @@ class MoviesModuleViewController: BaseViewController {
         bottomLayoutConstraint = customView.bottomLayoutConstraint
         customView.tableView.dataSource = self
         customView.tableView.delegate = self
+        view.backgroundColor = ColorProvider.background
 	}
 
 	private func setupActions() {

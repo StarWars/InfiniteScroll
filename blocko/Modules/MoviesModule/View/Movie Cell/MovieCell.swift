@@ -11,7 +11,7 @@ import SnapKit
 import UIKit
 
 
-protocol MovieCellConfiguration {
+protocol MovieConfiguration {
     func setup(with movie: Movie?)
 }
 
@@ -26,7 +26,7 @@ class MovieCell: UITableViewCell, Reusable {
     }
 
     private func setupView() {
-        accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        tintColor = ColorProvider.white
         selectionStyle = .none
         contentView.addSubview(movieView)
         backgroundColor = UIColor.clear
@@ -47,7 +47,7 @@ class MovieCell: UITableViewCell, Reusable {
 
 }
 
-extension MovieCell: MovieCellConfiguration {
+extension MovieCell: MovieConfiguration {
     func setup(with movie: Movie?) {
         movieView.setup(with: movie)
     }

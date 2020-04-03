@@ -1,7 +1,7 @@
 import Foundation
 
 protocol MovieDetailsModulePresenterInput: BasePresenterInput {
-
+    var movie: Movie { get }
 }
 
 protocol MovieDetailsModuleInteractorOutput: class {
@@ -30,6 +30,10 @@ extension MovieDetailsModulePresenter: MovieDetailsModulePresenterInput {
 
     var baseWireframe: BaseWireframeInput? {
         return wireframe
+    }
+    
+    var movie: Movie {
+        return currentMovie
     }
     
 }

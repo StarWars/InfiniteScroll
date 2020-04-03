@@ -49,6 +49,7 @@
 		BF35F1CB2437724F0017B422 /* BlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1C92437724F0017B422 /* BlurredView.swift */; };
 		BF35F1CC2437724F0017B422 /* BlurredLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1CA2437724F0017B422 /* BlurredLabelView.swift */; };
 		BF35F1CE243774730017B422 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1CD243774730017B422 /* EmptyTableView.swift */; };
+		BF35F1D12437D1260017B422 /* CustomScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF35F1D02437D1260017B422 /* CustomScrollView.swift */; };
 		BFE1FCDA21322B66005EE8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCD921322B66005EE8CD /* AppDelegate.swift */; };
 		BFE1FCDC21322B66005EE8CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1FCDB21322B66005EE8CD /* ViewController.swift */; };
 		BFE1FCDF21322B66005EE8CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE1FCDD21322B66005EE8CD /* Main.storyboard */; };
@@ -111,6 +112,7 @@
 		BF35F1C92437724F0017B422 /* BlurredView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredView.swift; sourceTree = "<group>"; };
 		BF35F1CA2437724F0017B422 /* BlurredLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurredLabelView.swift; sourceTree = "<group>"; };
 		BF35F1CD243774730017B422 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
+		BF35F1D02437D1260017B422 /* CustomScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomScrollView.swift; sourceTree = "<group>"; };
 		BFE1FCD621322B66005EE8CD /* blocko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blocko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE1FCD921322B66005EE8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFE1FCDB21322B66005EE8CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		BF0BA886213238820063D3E1 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				BF35F1CF2437D1150017B422 /* ScrollView */,
 				BF35F1C8243772350017B422 /* Blurred */,
 				BF0BA887213238820063D3E1 /* Buttons */,
 				BF0BA889213238820063D3E1 /* TabBar */,
@@ -407,6 +410,14 @@
 				BF35F1C92437724F0017B422 /* BlurredView.swift */,
 			);
 			path = Blurred;
+			sourceTree = "<group>";
+		};
+		BF35F1CF2437D1150017B422 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BF35F1D02437D1260017B422 /* CustomScrollView.swift */,
+			);
+			path = ScrollView;
 			sourceTree = "<group>";
 		};
 		BF41E4EF2132376200943DA3 /* Supporting Files */ = {
@@ -658,6 +669,7 @@
 				BF0BA8AC213238820063D3E1 /* ForceCast.swift in Sources */,
 				BFE1FCDC21322B66005EE8CD /* ViewController.swift in Sources */,
 				BF35F1A724369C620017B422 /* MovieNowPlayingResponse.swift in Sources */,
+				BF35F1D12437D1260017B422 /* CustomScrollView.swift in Sources */,
 				BF0BA8B8213238820063D3E1 /* ColorProvider.swift in Sources */,
 				BF0BA8B7213238820063D3E1 /* BaseInteractorInput.swift in Sources */,
 				BF35F1AC24369C620017B422 /* BaseInteractorProtocol.swift in Sources */,

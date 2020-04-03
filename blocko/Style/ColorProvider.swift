@@ -14,10 +14,6 @@ struct ColorProvider {
         return UIColor.white
     }
 
-    static var lightColor: UIColor {
-        return UIColor.white
-    }
-
     static var primaryColor: UIColor {
         return UIColor.red
     }
