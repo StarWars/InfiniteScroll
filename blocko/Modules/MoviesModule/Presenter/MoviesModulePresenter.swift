@@ -4,10 +4,11 @@ import Foundation
 protocol MoviesModulePresenterInput: BasePresenterInput {
 
     var retrievedMovies: [Movie] { get }
+    var totalMoviesCount: Int { get }
 
     func movie(at indexPath: IndexPath) -> Movie?
     func showMovieDetails(at indexPath: IndexPath)
-
+    func retrieveMovies()
 }
 
 protocol MoviesModuleInteractorOutput: class {
@@ -18,6 +19,7 @@ class MoviesModulePresenter {
 
     private var movies = [Movie]()
     private var currentPage = 1
+    private var totalCount = 0
 
     weak var view: MoviesModuleViewInput?
     let interactor: MoviesModuleInteractorInput
@@ -30,45 +32,22 @@ class MoviesModulePresenter {
     }
 
     func viewDidLoad() {
-        retrieveMovies(page: currentPage)
+        retrieveMovies()
     }
 
-    private func retrieveMovies(page: Int) {
 
-        view?.showLoadingIndicator()
-
-        let initialPageQuery = MovieNowPlayingQuery(page: page)
-
-        interactor.retrieveNowPlayingMovies(query: initialPageQuery) { [weak self] response, error in
-            guard let self = self else {
-                return
-            }
-
-            self.view?.hideLoadingIndicator()
-
-            guard error == nil else {
-                self.view?.showStandardAlert(title: nil, message: error!.description)
-                return
-            }
-
-            guard let response = response else {
-                return
-            }
-
-            let movies = response.results
-            self.movies.append(contentsOf: movies)
-
-            if page < response.totalPages {
-                self.currentPage = page + 1
-            }
-
-            self.view?.reloadData()
-
-        }
+    private func calculateIndexPathsToReload(from newMovies: [Movie]) -> [IndexPath] {
+        let startIndex = movies.count - newMovies.count
+        let endIndex = startIndex + newMovies.count
+        return (startIndex ..< endIndex).map { IndexPath(row: $0, section: 0) }
     }
 }
 
 extension MoviesModulePresenter: MoviesModulePresenterInput {
+
+    var totalMoviesCount: Int {
+        return totalCount
+    }
 
     var retrievedMovies: [Movie] {
         return movies
@@ -93,7 +72,48 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
         }
         wireframe.showDetails(of: movieToShow)
     }
-    
+
+    func retrieveMovies() {
+
+        let initialPageQuery = MovieNowPlayingQuery(page: currentPage)
+
+        interactor.retrieveNowPlayingMovies(query: initialPageQuery) { [weak self] response, error in
+            guard let self = self else {
+                return
+            }
+
+            self.view?.stopPullToRefreshAnimation()
+
+            if let response = response  {
+
+                self.movies.append(contentsOf: response.results)
+
+                /**
+                 It seems that for page `1`, totalResults is different than for page `2` and later
+                 Reload to prevent the crash.
+                 */
+                if self.totalCount != response.totalResults {
+                    self.view?.reloadData(newIndexPathsToReload: nil)
+                }
+
+                self.totalCount = response.totalResults
+                self.currentPage += 1
+
+                if response.page > 1 {
+                    let indexPathsToReload = self.calculateIndexPathsToReload(from: response.results)
+                    self.view?.reloadData(newIndexPathsToReload: indexPathsToReload)
+                } else {
+                    self.view?.reloadData(newIndexPathsToReload: nil)
+                }
+
+
+            } else if let error = error, error != .fetchInProgress {
+                self.view?.showStandardAlert(title: nil, message: error.description)
+            }
+
+
+        }
+    }
 }
 
 extension MoviesModulePresenter: MoviesModuleInteractorOutput {

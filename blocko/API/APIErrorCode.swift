@@ -3,6 +3,7 @@ import Foundation
 enum APIErrorCode: Int {
     case noInternet = -1,
     unknown = -2,
+    fetchInProgress = -3,
     allGood = 200,
     unauthorized = 401
 
@@ -16,6 +17,8 @@ enum APIErrorCode: Int {
             return R.string.localizable.no_internet_connection()
         case .allGood:
             return R.string.localizable.no_error()
+        case .fetchInProgress:
+            return R.string.localizable.fetch_in_progress()
         }
     }
 }

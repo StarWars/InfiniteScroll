@@ -22,11 +22,15 @@ extension BaseWireframe: BaseWireframeInput {
     }
 
     func back() {
-        currentController?.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.async {
+            self.currentController?.navigationController?.popViewController(animated: true)
+        }
     }
 
     func close() {
-        currentController?.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.currentController?.dismiss(animated: true, completion: nil)
+        }
     }
 
     func present(_ vc: UIViewController) {

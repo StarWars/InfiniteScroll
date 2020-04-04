@@ -2,9 +2,8 @@ import CocoaLumberjack
 import UIKit
 
 protocol MoviesModuleViewInput: BaseViewInput {
-    func showLoadingIndicator()
-    func hideLoadingIndicator()
-    func reloadData()
+    func reloadData(newIndexPathsToReload: [IndexPath]?)
+    func stopPullToRefreshAnimation()
 }
 
 class MoviesModuleViewController: BaseViewController {
@@ -40,26 +39,70 @@ class MoviesModuleViewController: BaseViewController {
         bottomLayoutConstraint = customView.bottomLayoutConstraint
         customView.tableView.dataSource = self
         customView.tableView.delegate = self
+        customView.tableView.prefetchDataSource = self
         view.backgroundColor = ColorProvider.background
 	}
 
 	private func setupActions() {
-
+        customView.refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
 	}
 
 	override func loadView() {
 		view = MoviesModuleView()
 	}
 
+    @objc private func pullToRefresh() {
+        if presenter.retrievedMovies.isEmpty {
+            presenter.retrieveMovies()
+        } else {
+            stopPullToRefreshAnimation()
+        }
+    }
+
+    func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        return indexPath.row >= presenter.retrievedMovies.count
+    }
+
+    func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+        let indexPathsForVisibleRows = customView.tableView.indexPathsForVisibleRows ?? []
+        let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
+        return Array(indexPathsIntersection)
+    }
 }
 
 extension MoviesModuleViewController: MoviesModuleViewInput {
 
-    override func reloadData() {
-        customView.refreshControl.endRefreshing()
-        customView.tableView.reloadData()
+    func reloadData(newIndexPathsToReload: [IndexPath]?) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else {
+                return
+            }
+
+            guard let newIndexPathsToReload = newIndexPathsToReload else {
+                self.customView.tableView.reloadData()
+                return
+            }
+
+            let indexPathsToReload = self.visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
+            self.customView.tableView.reloadRows(at: indexPathsToReload, with: .automatic)
+        }
     }
 
+    func stopPullToRefreshAnimation() {
+        DispatchQueue.main.async {
+            self.customView.refreshControl.endRefreshing()
+        }
+    }
+
+}
+
+
+extension MoviesModuleViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            presenter.retrieveMovies()
+        }
+    }
 }
 
 extension MoviesModuleViewController: UITableViewDelegate {
@@ -77,7 +120,7 @@ extension MoviesModuleViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        let moviesCount = presenter.retrievedMovies.count
+        let moviesCount = presenter.totalMoviesCount
 
         if moviesCount == 0 {
             tableView.backgroundView = EmptyTableView(title: R.string.localizable.cta_empty_movies())
@@ -92,8 +135,12 @@ extension MoviesModuleViewController: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieCell.self)
 
-        let movie = presenter.movie(at: indexPath)
-        cell.setup(with: movie)
+        if isLoadingCell(for: indexPath) {
+            cell.setup(with: nil)
+        } else {
+            let movie = presenter.movie(at: indexPath)
+            cell.setup(with: movie)
+        }
 
         return cell
 

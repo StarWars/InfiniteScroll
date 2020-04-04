@@ -7,8 +7,6 @@ import UIKit
 protocol BaseModuleViewInput: BaseViewInput {
     func hideBanner()
     func showError(_ error: NSError)
-    func showLoadingIndicator()
-    func hideLoadingIndicator()
     func reloadData()
 
     var basePresenter: BasePresenterInput? { get }
@@ -206,38 +204,9 @@ class BaseViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    func configureUIForServerCommunication(_ serverCommunicationInProgress: Bool) {
-
-        DDLogInfo("Default `configureUIForServerCommunication` implementation invoked")
-
-        DispatchQueue.main.async {
-            if serverCommunicationInProgress {
-                self.showLoadingIndicator()
-            } else {
-                self.hideLoadingIndicator()
-            }
-        }
-    }
-
 }
 
 extension BaseViewController: BaseModuleViewInput {
-
-    @objc
-    func showLoadingIndicator() {
-        DispatchQueue.main.async { [weak self] in
-            self?.view.isUserInteractionEnabled = false
-            self?.spinner.startSpinning()
-        }
-    }
-
-    @objc
-    func hideLoadingIndicator() {
-        DispatchQueue.main.async { [weak self] in
-            self?.view.isUserInteractionEnabled = true
-            self?.spinner.stopSpinning()
-        }
-    }
 
     @objc
     func reloadData() {

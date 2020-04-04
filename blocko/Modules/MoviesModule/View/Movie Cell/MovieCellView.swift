@@ -5,18 +5,28 @@ import UIKit
 class MovieCellView: UIView, MovieConfiguration {
 
     // MARK: - Constants -
+    private let kStarButtonSize = CGSize(width: 45, height: 45)
     private let kDefaultInset: CGFloat = 8
-    private let kCellHeight: CGFloat = 160
+    private var kCellHeight: CGFloat {
+        /// Based on documentation, the size of retrieved images will be 500x281 px.
+        /// On production, it would be safer to retrieve that values from the API rather then hardcode them.
+        let aspectRatio = 500.0 / 281.0
+        let screenWidth = UIScreen.main.bounds.width
+        let backgroundWidth = screenWidth - 2 * kDefaultInset
+        let backgroundHeight = backgroundWidth / CGFloat(aspectRatio)
+
+        return backgroundHeight
+    }
     private let kTitleHorizontalInset: CGFloat = 16
-    private let kTitleVerticalInset: CGFloat = 17
-    private let kTimeHorizontalInset: CGFloat = 11
-    private let kTimeVerticalInset: CGFloat = 10
+    private let kTitleVerticalInset: CGFloat = 16
+    private let kRatingInset: CGFloat = 10
 
     // MARK: - ivars -
     public lazy var cellBackground: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
         view.roundedEdges(radius: 14)
+        view.kf.indicatorType = .activity
         return view
     }()
 
@@ -36,7 +46,13 @@ class MovieCellView: UIView, MovieConfiguration {
         return view
     }()
 
-    public lazy var timeView = BlurredLabelView()
+    public lazy var ratingView = BlurredLabelView()
+
+    public lazy var starButton: UIButton = {
+        let view = UIButton()
+        view.backgroundColor = UIColor.yellow
+        return view
+    }()
 
     private var gradientLayer: CAGradientLayer?
 
@@ -59,7 +75,8 @@ class MovieCellView: UIView, MovieConfiguration {
         applyGradient(from: UIColor.clear, to: ColorProvider.black)
 
         cellBackground.addSubview(titleWrapper)
-        cellBackground.addSubview(timeView)
+        cellBackground.addSubview(ratingView)
+        cellBackground.addSubview(starButton)
 
         titleWrapper.addSubview(cellTitle)
         titleWrapper.addSubview(cellSubTitle)
@@ -89,35 +106,37 @@ class MovieCellView: UIView, MovieConfiguration {
             make.top.equalTo(cellTitle.snp.bottom)
         }
 
-        timeView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(kTimeVerticalInset)
-            make.trailing.equalToSuperview().inset(kTimeHorizontalInset)
-            make.leading.greaterThanOrEqualTo(kTimeVerticalInset)
+        ratingView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(kRatingInset)
+            make.trailing.equalToSuperview().inset(kRatingInset)
+            make.leading.greaterThanOrEqualTo(kRatingInset)
+        }
+
+        starButton.snp.makeConstraints { make in
+            make.size.equalTo(kStarButtonSize)
+            make.top.equalTo(ratingView)
+            make.leading.equalToSuperview().inset(kRatingInset)
+            make.trailing.lessThanOrEqualTo(ratingView.snp.leading)
         }
 
     }
 
     func setup(with movie: Movie?) {
         if let url = APIClient.sharedInstance.backgroundImageURL(movie) {
-            cellBackground.kf.setImage(with: url) { result in
-                switch result {
-                case .failure(let error):
-                    DDLogError(error.errorDescription ?? "Image retrieval error")
-                case .success(_):
-                    break
-                }
-
-            }
+            cellBackground.kf.setImage(with: url, options: KingfisherOptionsInfo([.backgroundDecode, .forceTransition]))
+        } else {
+            cellBackground.kf.cancelDownloadTask()
+            cellBackground.image = nil
         }
 
         cellTitle.text = movie?.title
 
-        if let releaseDate = movie?.releaseDate.timeIntervalSince1970.timestampToString(format: DateFormatString.ymd) {
+        if let releaseDate = movie?.releaseDate?.timeIntervalSince1970.timestampToString(format: DateFormatString.ymd) {
             cellSubTitle.text = "\(R.string.localizable.release_date_subtitle()) \(releaseDate)"
         }
 
         if let voteAverate = movie?.voteAverage {
-            timeView.setup(title: "\(voteAverate)")
+            ratingView.setup(title: "\(voteAverate)")
         }
 
     }

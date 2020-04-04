@@ -12,7 +12,7 @@ class EmptyTableView: UIView {
     private lazy var title: UILabel = {
         let view = UILabel()
         view.font = FontProvider.standardBold
-        view.textColor = ColorProvider.black
+        view.textColor = ColorProvider.white
         view.numberOfLines = 0
         view.textAlignment = .center
         return view
@@ -20,7 +20,7 @@ class EmptyTableView: UIView {
 
     public init(title: String?) {
         super.init(frame: .zero)
-        backgroundColor = ColorProvider.background
+        backgroundColor = UIColor.clear
         self.title.text = title
         setupView()
         setupConstraints()
@@ -36,12 +36,13 @@ class EmptyTableView: UIView {
 
     private func setupConstraints() {
         snp.makeConstraints { make in
-            make.width.greaterThanOrEqualTo(0)
+            make.width.equalTo(UIScreen.main.bounds.width)
+            make.height.equalTo(UIScreen.main.bounds.height)
         }
 
         title.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(kMargin)
-            make.centerY.equalToSuperview()
+            make.edges.equalToSuperview().inset(kMargin)
+            make.center.equalToSuperview()
         }
     }
 }

@@ -1,7 +1,7 @@
 // MARK: - General -
 "general_alert_ok" = "Ok";
 "fetching_movies" = "Fetching movies";
-"cta_empty_movies" = "No movies found :( Try again!";
+"cta_empty_movies" = "No movies found :( Pull to refresh!";
 
 // MARK: - Titles -
 "movies_module_title" = "Currently playing";
@@ -13,6 +13,7 @@
 "info_banner_title_failure" = "Failure";
 "error_failure" = "Error";
 "no_internet_connection" = "no internet connection";
+"fetch_in_progress" = "Fetch in progress";
 "unknown_reason" = "unknown reason";
 "connection_timeout" = "connection timeout";
 "connection_refused" = "connection refused";

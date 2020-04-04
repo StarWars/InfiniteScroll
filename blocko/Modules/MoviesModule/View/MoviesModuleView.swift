@@ -35,7 +35,7 @@ class MoviesModuleView: BaseView {
     override func setupConstraints() {
         tableView.snp.makeConstraints { make in
             make.top.equalTo(safeArea.top)
-            make.bottom.equalTo(safeArea.bottom)
+            make.bottom.equalToSuperview()
             make.leading.equalTo(safeArea.leading)
             make.trailing.equalTo(safeArea.trailing)
         }

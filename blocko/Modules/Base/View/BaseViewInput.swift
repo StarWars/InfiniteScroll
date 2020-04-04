@@ -1,3 +1,4 @@
+import CocoaLumberjack
 import UIKit
 
 protocol BaseViewInput: class {
@@ -10,8 +11,14 @@ protocol BaseViewInput: class {
 
 extension BaseViewInput {
 
-    func showStandardAlert(title: String?, message: String?) {}
-    func showStandardAlert(title: String?, message: String?, action: ((UIAlertAction) -> Void)?) {}
-    func showButtonIndicator(show: Bool) {}
+    func showStandardAlert(title: String?, message: String?) {
+        DDLogVerbose("Not implemented")
+    }
+    func showStandardAlert(title: String?, message: String?, action: ((UIAlertAction) -> Void)?) {
+        DDLogVerbose("Not implemented")
+    }
+    func showButtonIndicator(show: Bool) {
+        DDLogVerbose("Not implemented")
+    }
 
 }

@@ -6,20 +6,20 @@ public struct Dates: Codable {
 }
 
 public struct Movie: Codable {
-    public let popularity: Double
-    public let voteCount: Int
-    public let video: Bool
-    public let posterPath: String
-    public let id: Int
-    public let adult: Bool
+    public let popularity: Double?
+    public let voteCount: Int?
+    public let video: Bool?
+    public let posterPath: String?
+    public let id: Int?
+    public let adult: Bool?
     public let backdropPath: String?
-    public let originalLanguage: String
-    public let originalTitle: String
-    public let genreIds: [Int]
-    public let title: String
-    public let voteAverage: Double
-    public let overview: String
-    public let releaseDate: Date
+    public let originalLanguage: String?
+    public let originalTitle: String?
+    public let genreIds: [Int]?
+    public let title: String?
+    public let voteAverage: Double?
+    public let overview: String?
+    public let releaseDate: Date?
 
     private enum CodingKeys: String, CodingKey {
         case popularity
