@@ -9,6 +9,7 @@ protocol MoviesModulePresenterInput: BasePresenterInput {
     func movie(at indexPath: IndexPath) -> Movie?
     func showMovieDetails(at indexPath: IndexPath)
     func retrieveMovies()
+    func toggleFavourite(_ movie: Movie)
 }
 
 protocol MoviesModuleInteractorOutput: class {
@@ -73,6 +74,10 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
         wireframe.showDetails(of: movieToShow)
     }
 
+    func toggleFavourite(_ movie: Movie) {
+        DataController.shared.toggle(movie: movie)
+    }
+
     func retrieveMovies() {
 
         let initialPageQuery = MovieNowPlayingQuery(page: currentPage)
@@ -110,7 +115,6 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
             } else if let error = error, error != .fetchInProgress {
                 self.view?.showStandardAlert(title: nil, message: error.description)
             }
-
 
         }
     }

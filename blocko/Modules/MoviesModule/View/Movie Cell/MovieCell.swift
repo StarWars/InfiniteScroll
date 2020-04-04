@@ -17,12 +17,16 @@ protocol MovieConfiguration {
 
 class MovieCell: UITableViewCell, Reusable {
 
+    var actionHandler: ((Movie?) -> Void)?
+
+    private var currentMovie: Movie?
     private lazy var movieView = MovieCellView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
         setupConstraints()
+        setupActions()
     }
 
     private func setupView() {
@@ -41,14 +45,23 @@ class MovieCell: UITableViewCell, Reusable {
 
     }
 
+    private func setupActions() {
+        movieView.favButton.addTarget(self, action: #selector(favButtonPressed), for: .touchUpInside)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @objc private func favButtonPressed() {
+        actionHandler?(currentMovie)
     }
 
 }
 
 extension MovieCell: MovieConfiguration {
     func setup(with movie: Movie?) {
+        currentMovie = movie
         movieView.setup(with: movie)
     }
 }

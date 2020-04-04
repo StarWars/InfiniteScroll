@@ -48,9 +48,11 @@ class MovieCellView: UIView, MovieConfiguration {
 
     public lazy var ratingView = BlurredLabelView()
 
-    public lazy var starButton: UIButton = {
+    public lazy var favButton: UIButton = {
         let view = UIButton()
-        view.backgroundColor = UIColor.yellow
+        view.setImage(R.image.star(), for: .selected)
+        view.setImage(R.image.starOutline(), for: .normal)
+        view.tintColor = UIColor.yellow
         return view
     }()
 
@@ -76,7 +78,7 @@ class MovieCellView: UIView, MovieConfiguration {
 
         cellBackground.addSubview(titleWrapper)
         cellBackground.addSubview(ratingView)
-        cellBackground.addSubview(starButton)
+        cellBackground.addSubview(favButton)
 
         titleWrapper.addSubview(cellTitle)
         titleWrapper.addSubview(cellSubTitle)
@@ -84,7 +86,7 @@ class MovieCellView: UIView, MovieConfiguration {
 
     private func setupConstraints() {
 
-        cellBackground.snp.makeConstraints { make in
+        cellBackground.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(kDefaultInset)
             make.top.bottom.equalToSuperview().inset(kDefaultInset)
             make.height.equalTo(kCellHeight)
@@ -112,7 +114,7 @@ class MovieCellView: UIView, MovieConfiguration {
             make.leading.greaterThanOrEqualTo(kRatingInset)
         }
 
-        starButton.snp.makeConstraints { make in
+        favButton.snp.makeConstraints { make in
             make.size.equalTo(kStarButtonSize)
             make.top.equalTo(ratingView)
             make.leading.equalToSuperview().inset(kRatingInset)

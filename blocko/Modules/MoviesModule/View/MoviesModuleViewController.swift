@@ -142,6 +142,14 @@ extension MoviesModuleViewController: UITableViewDataSource {
             cell.setup(with: movie)
         }
 
+        cell.actionHandler = { [weak self] movie in
+            guard let movie = movie else {
+                return
+            }
+            
+            self?.presenter.toggleFavourite(movie)
+        }
+
         return cell
 
     }
