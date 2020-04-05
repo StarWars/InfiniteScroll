@@ -174,7 +174,6 @@ extension MoviesModuleViewController: UITableViewDataSource {
 
         if isFiltering {
             moviesCount = presenter.totalSearchResultsCount
-            DDLogError("movies count: \(moviesCount)")
         } else {
             moviesCount = presenter.totalMoviesCount
         }

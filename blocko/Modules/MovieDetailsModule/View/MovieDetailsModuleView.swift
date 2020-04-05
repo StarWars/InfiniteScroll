@@ -35,6 +35,7 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
         let view = UIImageView()
         view.backgroundColor = ColorProvider.background
         view.contentMode = .scaleAspectFill
+        view.isUserInteractionEnabled = true
         return view
     }()
 
@@ -61,7 +62,7 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
         addSubview(scrollView)
 
         moviePoster.addSubview(ratingView)
-        addSubview(favButton)
+        moviePoster.addSubview(favButton)
 
         scrollView.addContentSubview(view: moviePoster)
         scrollView.addContentSubview(view: stackView)
@@ -80,6 +81,14 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
             make.top.equalTo(safeArea.top)
         }
 
+        favButton.snp.makeConstraints { make in
+            make.top.greaterThanOrEqualToSuperview().inset(kFavInset)
+            make.centerY.equalTo(ratingView)
+            make.bottom.lessThanOrEqualToSuperview()
+            make.leading.equalToSuperview().inset(kFavInset)
+            make.trailing.lessThanOrEqualTo(ratingView.snp.leading)
+        }
+
         moviePoster.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview()
@@ -87,9 +96,10 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
         }
 
         ratingView.snp.makeConstraints { make in
+            make.size.equalTo(favButton)
             make.top.equalToSuperview().inset(kRatingInset)
             make.trailing.equalToSuperview().inset(kRatingInset)
-            make.leading.greaterThanOrEqualTo(kRatingInset)
+            make.leading.greaterThanOrEqualToSuperview().inset(kRatingInset)
         }
 
         stackView.snp.makeConstraints { make in
@@ -107,13 +117,6 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
 
         descriptionLabel?.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-        }
-
-        favButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(kFavInset)
-            make.bottom.lessThanOrEqualToSuperview()
-            make.leading.equalToSuperview().inset(kFavInset)
-            make.trailing.lessThanOrEqualTo(ratingView.snp.leading)
         }
 
 	}

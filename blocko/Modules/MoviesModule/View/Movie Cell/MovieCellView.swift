@@ -27,6 +27,7 @@ class MovieCellView: BaseView, MovieConfigurationProtocol, MovieViewContentProto
         view.contentMode = .scaleAspectFill
         view.roundedEdges(radius: 14)
         view.kf.indicatorType = .activity
+        view.isUserInteractionEnabled = true
         return view
     }()
 
@@ -61,7 +62,7 @@ class MovieCellView: BaseView, MovieConfigurationProtocol, MovieViewContentProto
 
         moviePoster.addSubview(titleWrapper)
         moviePoster.addSubview(ratingView)
-        addSubview(favButton)
+        moviePoster.addSubview(favButton)
 
         titleWrapper.addSubview(titleLabel)
         titleWrapper.addSubview(releaseDateLabel)
@@ -94,11 +95,13 @@ class MovieCellView: BaseView, MovieConfigurationProtocol, MovieViewContentProto
         ratingView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(kRatingInset)
             make.trailing.equalToSuperview().inset(kRatingInset)
-            make.leading.greaterThanOrEqualTo(kRatingInset)
+            make.leading.greaterThanOrEqualToSuperview().inset(kRatingInset)
+            make.size.equalTo(favButton)
         }
 
         favButton.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(kFavInset)
+            make.top.greaterThanOrEqualToSuperview().inset(kFavInset)
+            make.centerY.equalTo(ratingView)
             make.bottom.lessThanOrEqualToSuperview()
             make.leading.equalToSuperview().inset(kFavInset)
             make.trailing.lessThanOrEqualTo(ratingView.snp.leading)

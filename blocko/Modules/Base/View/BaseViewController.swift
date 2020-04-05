@@ -60,7 +60,8 @@ class BaseViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         setupNavigationBar()
         basePresenter?.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = ColorProvider.white
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +71,7 @@ class BaseViewController: UIViewController {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
 
     // MARK: - Keyboard -
@@ -124,6 +126,7 @@ class BaseViewController: UIViewController {
     // MARK: - Navigation Bar -
 
     func setupNavigationBar() {
+        navigationController?.navigationBar.barTintColor = ColorProvider.primaryColor
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: ColorProvider.white]
     }
 
@@ -172,6 +175,9 @@ class BaseViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
+}
+extension BaseViewController: UIGestureRecognizerDelegate {
+    // ...
 }
 
 extension BaseViewController: BaseModuleViewInput {

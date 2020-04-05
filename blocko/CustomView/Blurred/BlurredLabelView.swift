@@ -14,7 +14,8 @@ class BlurredLabelView: BaseView {
     private lazy var label: UILabel = {
         let view = UILabel()
         view.textColor = ColorProvider.white
-        view.font = UIFont.systemFont(ofSize: 12)
+        view.textAlignment = .center
+        view.font = FontProvider.standardBold.withSize(12)
         return view
     }()
 
@@ -31,7 +32,7 @@ class BlurredLabelView: BaseView {
 
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(kHorizontalInset)
+            make.leading.trailing.equalToSuperview()
             make.top.bottom.equalToSuperview().inset(kHorizontalInset)
         }
     }

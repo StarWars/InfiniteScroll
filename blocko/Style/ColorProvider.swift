@@ -12,11 +12,7 @@ struct ColorProvider {
     }
 
     static var primaryColor: UIColor {
-        return UIColor.black
-    }
-
-    static var shadow: UIColor {
-        return UIColor.black
+        return UIColor.green
     }
 
     static var subtitle: UIColor {
