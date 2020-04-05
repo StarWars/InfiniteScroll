@@ -30,6 +30,7 @@ class MoviesModuleView: BaseView {
         return view
     }()
 
+    // MARK: - Setup -
     override func setupSubviews() {
         addSubview(tableView)
     }

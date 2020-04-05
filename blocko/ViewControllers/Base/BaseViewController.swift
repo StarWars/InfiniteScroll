@@ -124,11 +124,6 @@ class BaseViewController: UIViewController {
     // MARK: - Navigation Bar -
 
     func setupNavigationBar() {
-        navigationController?.navigationBar.setBackgroundImage(UIImage.imageWithColor(color: ColorProvider.primaryColor),
-                                                               for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
-
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: ColorProvider.white]
     }
 
@@ -166,9 +161,6 @@ class BaseViewController: UIViewController {
     func backButtonPressed() {
         basePresenter?.backPressed()
     }
-
-    @objc
-    func xButtonSelected() {}
 
     // MARK: - Alerts -
 

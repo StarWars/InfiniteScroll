@@ -4,6 +4,7 @@ import UIKit
 class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigurationProtocol {
 
 	// MARK: - Constants -
+    private let kPosterHeight: CGFloat = 300
     private let kFavInset: CGFloat = 8
     private let kRatingInset: CGFloat = 10
     private let kDefaultInset: CGFloat = 8
@@ -21,10 +22,7 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
         return stack
     }()
 
-    private let scrollView: CustomScrollView = {
-        let view = CustomScrollView(showsTopMask: false)
-        return view
-    }()
+    private let scrollView = CustomScrollView()
 
     internal let titleLabel: UILabel = {
         let view = UILabel()
@@ -57,14 +55,7 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
 
     internal let favButton = StarButton()
 
-	// MARK: - Initialization -
-
-	override init() {
-		super.init()
-
-		setupSubviews()
-		setupConstraints()
-	}
+	// MARK: - Setup -
 
 	override func setupSubviews() {
         addSubview(scrollView)
@@ -85,13 +76,14 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
 
 	override func setupConstraints() {
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(safeArea.top)
         }
 
         moviePoster.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview()
-            make.height.equalTo(300)
+            make.height.equalTo(kPosterHeight)
         }
 
         ratingView.snp.makeConstraints { make in
@@ -125,11 +117,4 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
         }
 
 	}
-
-	// MARK: - Required Init -
-
-	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-
 }

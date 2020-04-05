@@ -3,8 +3,6 @@ import UIKit
 
 class EmptyTableView: UIView {
 
-    // MARK: - User interaction -
-
     // MARK: - constants -
     private let kMargin: Double = 16
 

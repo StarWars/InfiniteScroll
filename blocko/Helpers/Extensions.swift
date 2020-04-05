@@ -30,31 +30,6 @@ extension UIView {
 
 }
 
-extension UIViewController {
-    func embedViewController(viewController: UIViewController, inView view: UIView) {
-        addChild(viewController)
-        view.addSubview(viewController.view)
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false
-        viewController.view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        viewController.didMove(toParent: self)
-    }
-}
-
-extension UIImage {
-    class func imageWithColor(color: UIColor) -> UIImage? {
-        let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(color.cgColor)
-        context?.fill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return image
-    }
-}
-
 extension Encodable {
     var dictionary: [String: Any]? {
         guard let data = try? JSONEncoder().encode(self) else {

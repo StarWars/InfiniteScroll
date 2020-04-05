@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>api_key</key>
+	<string>eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYWIyM2FmMWU3Y2IwYzg4MjdmYWY5MzUyZGExYWRiYyIsInN1YiI6IjU1YzkwZWZkOTI1MTQxNzdjYzAwMDRmMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VAIV1oAxMZUrd9VcLb2qICrRhHjrpBqjlH8FMcsn_y0</string>
 	<key>currentEnv</key>
 	<string>prod</string>
 	<key>prod</key>

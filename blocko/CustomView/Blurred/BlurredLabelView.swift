@@ -25,7 +25,6 @@ class BlurredLabelView: BaseView {
     }
 
     override func setupConstraints() {
-
         blurredView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

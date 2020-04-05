@@ -11,7 +11,7 @@ class APIClient: NSObject, BaseInteractorProtocol {
 
     // MARK: - Constants -
     private let kServerInformationFileName = "ServerInformation"
-    private let kAPIToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYWIyM2FmMWU3Y2IwYzg4MjdmYWY5MzUyZGExYWRiYyIsInN1YiI6IjU1YzkwZWZkOTI1MTQxNzdjYzAwMDRmMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VAIV1oAxMZUrd9VcLb2qICrRhHjrpBqjlH8FMcsn_y0"
+    private var kAPIToken: String?
 
     // MARK: - Variables -
     var baseURL: String?
@@ -34,21 +34,31 @@ class APIClient: NSObject, BaseInteractorProtocol {
     }
 
     private func setupBasicServerInformations() {
-        if let path = Bundle.main.path(forResource: kServerInformationFileName, ofType: "plist") {
-            if let serverData = NSDictionary(contentsOfFile: path) as? [String: AnyObject] {
-                if let currentEnv = serverData["currentEnv"] as? String {
-                    baseURL = serverData[currentEnv]?["baseAPIURL"] as? String
-                    baseImagesURL = serverData[currentEnv]?["imagesURL"] as? String
-                }
-            }
-        } else {
+
+        guard let path = Bundle.main.path(forResource: kServerInformationFileName, ofType: "plist") else {
             DDLogError("Failed to find base server information file")
+            return
         }
+
+        guard let serverData = NSDictionary(contentsOfFile: path) as? [String: AnyObject] else {
+            DDLogError("Failed to parse '\(kServerInformationFileName).plist' file")
+            return
+        }
+
+        if let currentEnv = serverData["currentEnv"] as? String {
+            baseURL = serverData[currentEnv]?["baseAPIURL"] as? String
+            baseImagesURL = serverData[currentEnv]?["imagesURL"] as? String
+        }
+
+        if let apiKey = serverData["api_key"] as? String {
+            kAPIToken = apiKey
+        }
+
     }
 
     internal func sendRequest(request: BaseRequest) -> Request? {
 
-        guard var fullURL = baseURL, let requestURL = request.url else {
+        guard var fullURL = baseURL, let requestURL = request.url, let apiToken = kAPIToken else {
             request.failureResponseHandler?(nil, .unknown)
             return nil
         }
@@ -59,7 +69,7 @@ class APIClient: NSObject, BaseInteractorProtocol {
 
         headers.add(HTTPHeader(name: "Accept", value: "application/json"))
         headers.add(HTTPHeader(name: "Content-Type", value: "application/json; charset=utf-8"))
-        headers.add(HTTPHeader(name: "Authorization", value: "Bearer \(kAPIToken)"))
+        headers.add(HTTPHeader(name: "Authorization", value: "Bearer \(apiToken)"))
 
         if Connectivity.sharedInstance.isInternetAvailable {
 

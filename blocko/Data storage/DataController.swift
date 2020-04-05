@@ -162,7 +162,7 @@ class DataController: NSObject {
                                         code: DataController.Errors.insertError.rawValue,
                                         userInfo: ["localizedDescription": "Couldn't insert entity type RMovie to the DB"])
 
-                    DDLogError("Couldn't insert entity type Tip to the DB")
+                    DDLogError("Couldn't insert entity type RMovie to the DB")
                     completion(error)
                     return
                 }

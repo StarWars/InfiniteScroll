@@ -4,13 +4,6 @@ class BaseView: UIView {
 
     // MARK: - Constants -
     var bottomLayoutConstraint: NSLayoutConstraint?
-    internal let kButtonRadius: CGFloat = 10
-    internal let kButtonHeight: CGFloat = 45
-
-    // Constants
-    let kTextFieldHeight = 60
-    let kGeneralOffset = 16
-    let kFieldsVerticalOffset = 8
 
     // Init
 
@@ -34,11 +27,6 @@ class BaseView: UIView {
     internal func loadView() {
         setupSubviews()
         setupConstraints()
-    }
-
-    @objc
-    func injected() {
-        loadView()
     }
 
     // MARK: - Required Init -

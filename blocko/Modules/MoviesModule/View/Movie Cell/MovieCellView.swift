@@ -2,7 +2,7 @@ import CocoaLumberjack
 import Kingfisher
 import UIKit
 
-class MovieCellView: UIView, MovieConfigurationProtocol, MovieViewContentProtocol {
+class MovieCellView: BaseView, MovieConfigurationProtocol, MovieViewContentProtocol {
 
     // MARK: - Constants -
     private let kDefaultInset: CGFloat = 8
@@ -52,18 +52,7 @@ class MovieCellView: UIView, MovieConfigurationProtocol, MovieViewContentProtoco
 
     private var gradientLayer: CAGradientLayer?
 
-    convenience init() {
-        self.init(frame: .zero)
-        setupView()
-        setupConstraints()
-    }
-
-    private func setupView() {
-        setupSubviews()
-        setupConstraints()
-    }
-
-    private func setupSubviews() {
+    override func setupSubviews() {
         backgroundColor = UIColor.clear
 
         addSubview(moviePoster)
@@ -78,7 +67,7 @@ class MovieCellView: UIView, MovieConfigurationProtocol, MovieViewContentProtoco
         titleWrapper.addSubview(releaseDateLabel)
     }
 
-    private func setupConstraints() {
+    override func setupConstraints() {
 
         moviePoster.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(kDefaultInset)
