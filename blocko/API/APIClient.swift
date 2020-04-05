@@ -10,7 +10,6 @@ enum APIEndpoints: String {
 class APIClient: NSObject, BaseInteractorProtocol {
 
     // MARK: - Constants -
-
     private let kServerInformationFileName = "ServerInformation"
     private let kAPIToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYWIyM2FmMWU3Y2IwYzg4MjdmYWY5MzUyZGExYWRiYyIsInN1YiI6IjU1YzkwZWZkOTI1MTQxNzdjYzAwMDRmMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VAIV1oAxMZUrd9VcLb2qICrRhHjrpBqjlH8FMcsn_y0"
 
@@ -22,7 +21,6 @@ class APIClient: NSObject, BaseInteractorProtocol {
     static let sharedInstance = APIClient()
 
     // MARK: - Initialization -
-
     override init() {
         super.init()
 

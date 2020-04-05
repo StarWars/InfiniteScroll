@@ -46,15 +46,15 @@ opt_in_rules:
   
 indentation: tabs
 cyclomatic_complexity:
-  warning: 30
+  warning: 10
   error: 35
 file_length:
-  warning: 5000
+  warning: 1000
   error: 10000
 function_body_length:
-  warning: 200
+  warning: 50
 type_body_length:
-  warning: 500
+  warning: 200
 identifier_name:
   min_length: 2
   max_length:

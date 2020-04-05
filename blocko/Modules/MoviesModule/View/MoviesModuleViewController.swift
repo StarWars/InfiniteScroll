@@ -69,7 +69,6 @@ class MoviesModuleViewController: BaseViewController {
         customView.tableView.dataSource = self
         customView.tableView.delegate = self
         customView.tableView.prefetchDataSource = self
-        registerKeyboardAvoiding()
         view.backgroundColor = ColorProvider.background
         setupSearchController()
 	}
@@ -242,6 +241,6 @@ extension MoviesModuleViewController: UISearchResultsUpdating {
 
         self.searchTask = task
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: task)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.75, execute: task)
     }
 }
