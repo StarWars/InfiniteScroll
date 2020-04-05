@@ -21,7 +21,7 @@ class MoviesModuleView: BaseView {
         view.backgroundColor = ColorProvider.background
         view.register(cellType: MovieCell.self)
         view.rowHeight = UITableView.automaticDimension
-        view.estimatedRowHeight = 44
+        view.estimatedRowHeight = 300
         view.separatorStyle = .none
         view.refreshControl = refreshControl
 
