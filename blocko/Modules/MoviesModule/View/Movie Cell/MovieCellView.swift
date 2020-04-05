@@ -48,9 +48,7 @@ class MovieCellView: UIView, MovieConfigurationProtocol, MovieViewContentProtoco
 
     public lazy var ratingView = BlurredLabelView()
 
-    internal let favButton: StarButton = {
-        return StarButton(frame: .zero)
-    }()
+    internal let favButton = StarButton()
 
     private var gradientLayer: CAGradientLayer?
 

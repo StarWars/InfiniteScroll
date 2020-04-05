@@ -6,7 +6,7 @@ class StarButton: UIButton {
     private let kStarButtonSize = CGSize(width: 60, height: 60)
 
     // MARK: - init -
-    override init(frame: CGRect) {
+    init() {
         super.init(frame: .zero)
 
         setImage(R.image.star()?.withRenderingMode(.alwaysTemplate), for: .selected)
@@ -17,7 +17,7 @@ class StarButton: UIButton {
     }
 
     private func setupConstraints() {
-        snp.makeConstraints { make in
+        snp.remakeConstraints { make in
             make.size.equalTo(kStarButtonSize)
         }
     }

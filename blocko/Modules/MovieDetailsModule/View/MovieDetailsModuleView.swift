@@ -55,10 +55,7 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
 
     lazy var ratingView = BlurredLabelView()
 
-    internal let favButton: StarButton = {
-        return StarButton(frame: .zero)
-    }()
-
+    internal let favButton = StarButton()
 
 	// MARK: - Initialization -
 

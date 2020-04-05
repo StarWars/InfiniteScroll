@@ -54,6 +54,7 @@ class MovieCell: UITableViewCell, Reusable {
     }
 
     func setup(with movie: Movie?) {
+        self.currentMovie = movie
         movieView.setup(with: movie)
     }
 }
