@@ -12,7 +12,18 @@ class MoviesModuleViewController: BaseViewController {
 	// MARK: - Constants -
 
 	// MARK: - Variables -
+    private var searchTask: DispatchWorkItem?
 
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+
+    var isFiltering: Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
+    }
+
+    private let searchController = UISearchController(searchResultsController: nil)
 	fileprivate var customView: MoviesModuleView { return forceCast(view as Any) }
     let presenter: MoviesModulePresenterInput
 
@@ -35,7 +46,6 @@ class MoviesModuleViewController: BaseViewController {
 		setupActions()
 	}
 
-    /// iOS 10+ support.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         customView.tableView.reloadData()
@@ -47,12 +57,29 @@ class MoviesModuleViewController: BaseViewController {
         customView.tableView.dataSource = self
         customView.tableView.delegate = self
         customView.tableView.prefetchDataSource = self
+        registerKeyboardAvoiding()
         view.backgroundColor = ColorProvider.background
+        setupSearchController()
 	}
 
 	private func setupActions() {
         customView.refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
 	}
+
+    private func setupSearchController() {
+
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = R.string.localizable.type_to_search()
+
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+        } else {
+            customView.tableView.tableHeaderView = searchController.searchBar
+        }
+
+        definesPresentationContext = true
+    }
 
 	override func loadView() {
 		view = MoviesModuleView()
@@ -74,6 +101,11 @@ class MoviesModuleViewController: BaseViewController {
         let indexPathsForVisibleRows = customView.tableView.indexPathsForVisibleRows ?? []
         let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
         return Array(indexPathsIntersection)
+    }
+
+    func filterContentForSearchText(_ searchText: String) {
+        presenter.search(searchText)
+        customView.tableView.reloadData()
     }
 }
 
@@ -169,3 +201,24 @@ extension MoviesModuleViewController: UIAdaptivePresentationControllerDelegate {
         self.customView.tableView.reloadData()
     }
 }
+
+
+extension MoviesModuleViewController: UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        self.searchTask?.cancel()
+
+        let task = DispatchWorkItem { [weak self] in
+            guard let searchText = self?.searchController.searchBar.text else {
+                DDLogError("Failed to unwrap searchBar")
+                return
+            }
+            self?.filterContentForSearchText(searchText)
+        }
+
+        self.searchTask = task
+
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.75, execute: task)
+    }
+}
+

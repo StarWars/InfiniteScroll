@@ -16,7 +16,7 @@ import UIKit
 
 class BaseProvider {
 
-    func sendRequest<T>(request: BaseRequest, expectedResponseType: T.Type, completion: @escaping ((T?, APIErrorCode?) -> Void)) where T: Decodable {
+    func sendRequest<T>(request: BaseRequest, expectedResponseType: T.Type, completion: @escaping ((T?, APIErrorCode?) -> Void)) -> Request? where T: Decodable {
 
         request.successResponseHandler = { [weak self] response in
             let result = self?.parseResponse(response, expectedType: T.self)
@@ -32,8 +32,9 @@ class BaseProvider {
             }
         }
 
-        _ = APIClient.sharedInstance.sendRequest(request: request)
+        let request = APIClient.sharedInstance.sendRequest(request: request)
 
+        return request
     }
 
     func parseResponse<T>(_ response: DataResponse<Data, AFError>, expectedType: T.Type) -> T? where T: Decodable {

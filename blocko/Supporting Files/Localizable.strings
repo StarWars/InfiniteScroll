@@ -2,6 +2,7 @@
 "general_alert_ok" = "Ok";
 "fetching_movies" = "Fetching movies";
 "cta_empty_movies" = "No movies found :( Pull to refresh!";
+"type_to_search" = "Type to search";
 
 // MARK: - Titles -
 "movies_module_title" = "Currently playing";

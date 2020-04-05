@@ -44,7 +44,7 @@ public struct MovieNowPlayingResponse: Codable {
     public let results: [Movie]
     public let page: Int
     public let totalResults: Int
-    public let dates: Dates
+    public let dates: Dates?
     public let totalPages: Int
 
     private enum CodingKeys: String, CodingKey {

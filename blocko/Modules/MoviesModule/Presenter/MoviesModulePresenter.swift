@@ -16,6 +16,7 @@ protocol MoviesModulePresenterInput: BasePresenterInput, FavouriteMovieProtocol 
     var retrievedMovies: [Movie] { get }
     var totalMoviesCount: Int { get }
 
+    func search(_ title: String)
     func movie(at indexPath: IndexPath) -> Movie?
     func showMovieDetails(at indexPath: IndexPath)
     func retrieveMovies()
@@ -119,6 +120,13 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
                 self.view?.showStandardAlert(title: nil, message: error.description)
             }
 
+        }
+    }
+
+    func search(_ title: String) {
+        let searchMovieQuery = SearchMovieQuery(query: title)
+        interactor.searchMovie(query: searchMovieQuery) { response, error in
+            DDLogError("Response: \(response?.results.count ?? 0)")
         }
     }
 }
