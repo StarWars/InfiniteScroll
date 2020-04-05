@@ -70,7 +70,7 @@ class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigura
         addSubview(scrollView)
 
         moviePoster.addSubview(ratingView)
-        moviePoster.addSubview(favButton)
+        addSubview(favButton)
 
         scrollView.addContentSubview(view: moviePoster)
         scrollView.addContentSubview(view: stackView)

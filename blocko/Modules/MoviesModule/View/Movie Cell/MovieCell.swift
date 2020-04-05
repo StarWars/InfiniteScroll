@@ -50,7 +50,7 @@ class MovieCell: UITableViewCell, Reusable {
     }
 
     func toggleFavButton() {
-        movieView.favButton.isSelected = !movieView.favButton.isSelected
+        movieView.favButton.toggleSelection()
     }
 
     func setup(with movie: Movie?) {

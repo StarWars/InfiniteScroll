@@ -55,6 +55,7 @@ class MovieDetailsModuleViewController: BaseViewController {
 
     @objc
     private func favButtonPressed() {
+        customView.favButton.toggleSelection()
         presenter.toggleFavourite(presenter.movie)
     }
 
