@@ -15,7 +15,7 @@ struct ColorProvider {
     }
 
     static var primaryColor: UIColor {
-        return UIColor.red
+        return UIColor.black
     }
 
     static var black: UIColor {
