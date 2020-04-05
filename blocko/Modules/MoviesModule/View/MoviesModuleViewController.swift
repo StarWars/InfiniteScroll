@@ -35,6 +35,12 @@ class MoviesModuleViewController: BaseViewController {
 		setupActions()
 	}
 
+    /// iOS 10+ support.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        customView.tableView.reloadData()
+    }
+
 	private func setupView() {
         title = R.string.localizable.movies_module_title()
         bottomLayoutConstraint = customView.bottomLayoutConstraint
@@ -156,4 +162,10 @@ extension MoviesModuleViewController: UITableViewDataSource {
 
     }
 
+}
+
+extension MoviesModuleViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        self.customView.tableView.reloadData()
+    }
 }

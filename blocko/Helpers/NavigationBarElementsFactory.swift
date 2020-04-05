@@ -9,12 +9,4 @@ public struct NavigationBarElementsFactory {
         backButton.style = .done
         return backButton
     }
-
-    static func xButton() -> UIBarButtonItem {
-        let xButton = UIBarButtonItem()
-        xButton.tintColor = ColorProvider.white
-        xButton.image = R.image.close()
-        return xButton
-    }
-
 }

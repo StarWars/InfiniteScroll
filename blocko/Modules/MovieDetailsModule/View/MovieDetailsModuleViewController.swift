@@ -33,7 +33,7 @@ class MovieDetailsModuleViewController: BaseViewController {
 	}
     override func setupNavigationBar() {
         super.setupNavigationBar()
-        createXButton()
+        createBackButtonWithImage()
     }
 
 	private func setupView() {
@@ -49,8 +49,8 @@ class MovieDetailsModuleViewController: BaseViewController {
 		view = MovieDetailsModuleView()
 	}
 
-    override func xButtonSelected() {
-        presenter.closePressed()
+    override func backButtonPressed() {
+        presenter.backPressed()
     }
 
     @objc

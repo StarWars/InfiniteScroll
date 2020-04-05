@@ -27,8 +27,8 @@ extension MoviesModuleWireframe: MoviesModuleWireframeInput {
     func showDetails(of movie: Movie) {
         DispatchQueue.main.async {
             let attributesForm = MovieDetailsModuleWireframe.setupMovieDetailsModule(movie: movie)
-            let navigationWrapped = UINavigationController(rootViewController: attributesForm)
-            self.currentViewController?.present(navigationWrapped, animated: true, completion: nil)
+//            let navigationWrapped = UINavigationController(rootViewController: attributesForm)
+            self.currentViewController?.navigationController?.pushViewController(attributesForm, animated: true)
         }
     }
 

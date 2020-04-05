@@ -147,16 +147,6 @@ class BaseViewController: UIViewController {
 
     }
 
-    func createXButton() {
-        let xButton = NavigationBarElementsFactory.xButton()
-
-        xButton.action = #selector(xButtonSelected)
-        xButton.target = self
-        adjustBarButtonVerticalAlignment(button: xButton)
-
-        navigationItem.leftBarButtonItem = xButton
-    }
-
     private func adjustBarButtonVerticalAlignment(button: UIBarButtonItem) {
         if #available(iOS 11.0, *) {
         } else {

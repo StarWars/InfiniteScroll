@@ -79,7 +79,7 @@ class MovieCellView: UIView, MovieConfigurationProtocol, MovieViewContentProtoco
     }
 
     private func setupConstraints() {
-
+        
         moviePoster.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(kDefaultInset)
             make.top.bottom.equalToSuperview().inset(kDefaultInset)
