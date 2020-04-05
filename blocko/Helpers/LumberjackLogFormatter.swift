@@ -24,7 +24,7 @@ class LumberjackLogFormatter: NSObject, DDLogFormatter {
         if logMessage.level == .off {
             return nil
         } else {
-            return "[brgrtip](\(time)) \(level) \(logMessage.message)"
+            return "[dxc](\(time)) \(level) \(logMessage.message)"
         }
     }
 }

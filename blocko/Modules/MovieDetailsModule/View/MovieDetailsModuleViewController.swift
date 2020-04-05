@@ -10,7 +10,7 @@ class MovieDetailsModuleViewController: BaseViewController {
 
 	// MARK: - Variables -
 
-	fileprivate var customView: MovieDetailsModuleView { return forceCast(view) }
+	fileprivate var customView: MovieDetailsModuleView { return forceCast(view as Any) }
     let presenter: MovieDetailsModulePresenterInput
 
 	// MARK: - Initialization -
@@ -42,7 +42,7 @@ class MovieDetailsModuleViewController: BaseViewController {
 	}
 
 	private func setupActions() {
-
+        customView.favButton.addTarget(self, action: #selector(favButtonPressed), for: .touchUpInside)
 	}
 
 	override func loadView() {
@@ -51,6 +51,11 @@ class MovieDetailsModuleViewController: BaseViewController {
 
     override func xButtonSelected() {
         presenter.closePressed()
+    }
+
+    @objc
+    private func favButtonPressed() {
+        presenter.toggleFavourite(presenter.movie)
     }
 
 }

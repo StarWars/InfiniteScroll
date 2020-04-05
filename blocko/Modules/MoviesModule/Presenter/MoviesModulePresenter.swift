@@ -1,7 +1,17 @@
 import CocoaLumberjack
 import Foundation
 
-protocol MoviesModulePresenterInput: BasePresenterInput {
+protocol FavouriteMovieProtocol {
+    func toggleFavourite(_ movie: Movie)
+}
+
+extension FavouriteMovieProtocol {
+    func toggleFavourite(_ movie: Movie) {
+        DataController.shared.toggle(movie: movie)
+    }
+}
+
+protocol MoviesModulePresenterInput: BasePresenterInput, FavouriteMovieProtocol {
 
     var retrievedMovies: [Movie] { get }
     var totalMoviesCount: Int { get }
@@ -9,7 +19,6 @@ protocol MoviesModulePresenterInput: BasePresenterInput {
     func movie(at indexPath: IndexPath) -> Movie?
     func showMovieDetails(at indexPath: IndexPath)
     func retrieveMovies()
-    func toggleFavourite(_ movie: Movie)
 }
 
 protocol MoviesModuleInteractorOutput: class {
@@ -74,10 +83,6 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
         wireframe.showDetails(of: movieToShow)
     }
 
-    func toggleFavourite(_ movie: Movie) {
-        DataController.shared.toggle(movie: movie)
-    }
-
     func retrieveMovies() {
 
         let initialPageQuery = MovieNowPlayingQuery(page: currentPage)
@@ -86,8 +91,6 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
             guard let self = self else {
                 return
             }
-
-            self.view?.stopPullToRefreshAnimation()
 
             if let response = response  {
 

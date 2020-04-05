@@ -1,51 +1,63 @@
 import SnapKit
 import UIKit
 
-class MovieDetailsModuleView: BaseView {
+class MovieDetailsModuleView: BaseView, MovieViewContentProtocol, MovieConfigurationProtocol {
 
 	// MARK: - Constants -
+    private let kFavInset: CGFloat = 8
     private let kRatingInset: CGFloat = 10
     private let kDefaultInset: CGFloat = 8
 
 	// MARK: - Variables -
-    private let scrollView: CustomScrollView = {
-        let view = CustomScrollView(showsTopMask: false)
-        return view
-    }()
-
-    private let moviePoster: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = ColorProvider.background
-        view.contentMode = .scaleAspectFill
-        return view
-    }()
 
     private(set) lazy var stackView: UIStackView = {
         let stack = UIStackView()
 
         stack.axis = .vertical
-        stack.spacing = 0.0
+        stack.spacing = 8.0
         stack.alignment = UIStackView.Alignment.top
         stack.distribution = .fill
 
         return stack
     }()
 
-    private let titleLabel: UILabel = {
+    private let scrollView: CustomScrollView = {
+        let view = CustomScrollView(showsTopMask: false)
+        return view
+    }()
+
+    internal let titleLabel: UILabel = {
         let view = UILabel()
         view.font = FontProvider.standardBold.withSize(22)
         view.numberOfLines = 0
         return view
     }()
 
-    private let descriptionLabel: UILabel = {
+    internal let moviePoster: UIImageView = {
+        let view = UIImageView()
+        view.backgroundColor = ColorProvider.background
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+
+    internal let releaseDateLabel: UILabel = {
+        let view = UILabel()
+        view.font = FontProvider.standard.withSize(12)
+        return view
+    }()
+
+    internal let descriptionLabel: UILabel? = {
         let view = UILabel()
         view.font = FontProvider.standard.withSize(14)
         view.numberOfLines = 0
         return view
     }()
 
-    public lazy var ratingView = BlurredLabelView()
+    lazy var ratingView = BlurredLabelView()
+
+    internal let favButton: StarButton = {
+        return StarButton(frame: .zero)
+    }()
 
 
 	// MARK: - Initialization -
@@ -61,12 +73,17 @@ class MovieDetailsModuleView: BaseView {
         addSubview(scrollView)
 
         moviePoster.addSubview(ratingView)
+        moviePoster.addSubview(favButton)
 
         scrollView.addContentSubview(view: moviePoster)
         scrollView.addContentSubview(view: stackView)
 
         stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(descriptionLabel)
+        stackView.addArrangedSubview(releaseDateLabel)
+
+        if let descriptionLabel = descriptionLabel {
+            stackView.addArrangedSubview(descriptionLabel)
+        }
 	}
 
 	override func setupConstraints() {
@@ -95,8 +112,19 @@ class MovieDetailsModuleView: BaseView {
             make.leading.trailing.equalToSuperview()
         }
 
-        descriptionLabel.snp.makeConstraints { make in
+        releaseDateLabel.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
+        }
+
+        descriptionLabel?.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+        }
+
+        favButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(kFavInset)
+            make.bottom.lessThanOrEqualToSuperview()
+            make.leading.equalToSuperview().inset(kFavInset)
+            make.trailing.lessThanOrEqualTo(ratingView.snp.leading)
         }
 
 	}
@@ -107,33 +135,4 @@ class MovieDetailsModuleView: BaseView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-}
-
-extension MovieDetailsModuleView: MovieConfiguration {
-
-    func setup(with movie: Movie?) {
-        guard let movie = movie else {
-            setupCleanState()
-            return
-        }
-
-        if let url = APIClient.sharedInstance.backgroundImageURL(movie) {
-            moviePoster.kf.setImage(with: url)
-        }
-
-        titleLabel.text = movie.title
-        descriptionLabel.text = movie.overview
-
-        if let voteAverate = movie.voteAverage {
-            ratingView.setup(title: "\(voteAverate)")
-        }
-    }
-
-    private func setupCleanState() {
-        moviePoster.kf.cancelDownloadTask()
-        moviePoster.image = R.image.close()
-        titleLabel.text = nil
-        descriptionLabel.text = nil
-        ratingView.setup(title: "")
-    }
 }

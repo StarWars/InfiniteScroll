@@ -1,19 +1,7 @@
-//
-//  TipCell.swift
-//  brgrtip
-//
-//  Created by Michal Stawarz on 11/10/2019.
-//  Copyright © 2019 LE34. All rights reserved.
-//
-
+import CocoaLumberjack
 import Reusable
 import SnapKit
 import UIKit
-
-
-protocol MovieConfiguration {
-    func setup(with movie: Movie?)
-}
 
 class MovieCell: UITableViewCell, Reusable {
 
@@ -28,12 +16,15 @@ class MovieCell: UITableViewCell, Reusable {
         setupConstraints()
         setupActions()
     }
-
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
     private func setupView() {
         tintColor = ColorProvider.white
-        selectionStyle = .none
         contentView.addSubview(movieView)
         backgroundColor = UIColor.clear
+        selectionStyle = .none
     }
 
     private func setupConstraints() {
@@ -49,19 +40,21 @@ class MovieCell: UITableViewCell, Reusable {
         movieView.favButton.addTarget(self, action: #selector(favButtonPressed), for: .touchUpInside)
     }
 
+    @objc
+    private func favButtonPressed() {
+        actionHandler?(currentMovie)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc private func favButtonPressed() {
-        actionHandler?(currentMovie)
+    func toggleFavButton() {
+        movieView.favButton.isSelected = !movieView.favButton.isSelected
     }
 
-}
-
-extension MovieCell: MovieConfiguration {
     func setup(with movie: Movie?) {
-        currentMovie = movie
         movieView.setup(with: movie)
     }
 }
+

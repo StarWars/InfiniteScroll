@@ -37,7 +37,6 @@ class BaseViewController: UIViewController {
     private let kBarButtonsOffset: CGFloat = -14.0
 
     // MARK: - Variables -
-    private let spinner = Spinner()
     private var typeaheadLayoutConstraintBaseConstant: CGFloat?
     var typeaheadBottomLayoutConstraint: NSLayoutConstraint? {
         didSet {
@@ -62,24 +61,11 @@ class BaseViewController: UIViewController {
         setupNavigationBar()
         basePresenter?.viewDidLoad()
         view.backgroundColor = .white
-        setupSpinner()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         basePresenter?.viewWillAppear()
-    }
-
-    private func setupSpinner() {
-
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(spinner)
-        NSLayoutConstraint.activate([
-            spinner.widthAnchor.constraint(equalToConstant: 60),
-            spinner.heightAnchor.constraint(equalTo: spinner.widthAnchor),
-            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
     }
 
     deinit {

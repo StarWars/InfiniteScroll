@@ -55,3 +55,14 @@ public struct MovieNowPlayingResponse: Codable {
         case totalPages = "total_pages"
     }
 }
+
+extension Movie {
+    var releaseDateFormatted: String? {
+        if let releaseDate = releaseDate?.timeIntervalSince1970.timestampToString(format: DateFormatString.ymd) {
+            return "\(R.string.localizable.release_date_subtitle()) \(releaseDate)"
+        } else {
+            return nil
+        }
+    }
+
+}

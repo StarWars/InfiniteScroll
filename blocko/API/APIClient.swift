@@ -95,7 +95,7 @@ class APIClient: NSObject, BaseInteractorProtocol {
         }
 
         guard let backgroundPath = movie.backdropPath?.dropFirst() else {
-            DDLogDebug("Empty background path")
+            DDLogVerbose("Empty background path")
             return nil
         }
 

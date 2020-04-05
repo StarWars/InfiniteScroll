@@ -1,6 +1,6 @@
 import Foundation
 
-protocol MovieDetailsModulePresenterInput: BasePresenterInput {
+protocol MovieDetailsModulePresenterInput: BasePresenterInput, FavouriteMovieProtocol {
     var movie: Movie { get }
 }
 

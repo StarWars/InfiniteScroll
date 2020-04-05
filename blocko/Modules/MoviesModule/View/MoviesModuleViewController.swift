@@ -1,9 +1,10 @@
 import CocoaLumberjack
+import RxCocoa
+import RxSwift
 import UIKit
 
 protocol MoviesModuleViewInput: BaseViewInput {
     func reloadData(newIndexPathsToReload: [IndexPath]?)
-    func stopPullToRefreshAnimation()
 }
 
 class MoviesModuleViewController: BaseViewController {
@@ -12,7 +13,7 @@ class MoviesModuleViewController: BaseViewController {
 
 	// MARK: - Variables -
 
-	fileprivate var customView: MoviesModuleView { return forceCast(view) }
+	fileprivate var customView: MoviesModuleView { return forceCast(view as Any) }
     let presenter: MoviesModulePresenterInput
 
 	// MARK: - Initialization -
@@ -106,7 +107,6 @@ extension MoviesModuleViewController: UITableViewDataSourcePrefetching {
 }
 
 extension MoviesModuleViewController: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.showMovieDetails(at: indexPath)
     }
@@ -142,12 +142,14 @@ extension MoviesModuleViewController: UITableViewDataSource {
             cell.setup(with: movie)
         }
 
-        cell.actionHandler = { [weak self] movie in
+        cell.actionHandler = { [unowned self] movie in
             guard let movie = movie else {
                 return
             }
-            
-            self?.presenter.toggleFavourite(movie)
+
+            cell.toggleFavButton()
+
+            self.presenter.toggleFavourite(movie)
         }
 
         return cell

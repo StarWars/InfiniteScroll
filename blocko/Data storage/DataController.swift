@@ -20,8 +20,6 @@ class DataController: NSObject {
 
     lazy var persistentContainer: NSPersistentContainer = {
 
-        DDLogInfo("DB debug \(applicationDocumentsDirectory() ?? "")")
-
         let container = NSPersistentContainer(name: "movies")
 
         container.loadPersistentStores { description, error in
