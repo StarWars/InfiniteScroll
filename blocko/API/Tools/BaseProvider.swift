@@ -46,11 +46,29 @@ class BaseProvider {
 
         do {
             let decoder = JSONDecoder()
-
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = DateFormatString.ymd.rawValue
-            decoder.dateDecodingStrategy = .formatted(dateFormatter)
 
+            dateFormatter.dateFormat = DateFormatString.ymd.rawValue
+
+            decoder.dateDecodingStrategy = .custom({ decoder -> Date in
+                let container = try decoder.singleValueContainer()
+                let dateStr = try container.decode(String.self)
+
+                var date: Date? = nil
+
+                if dateStr.count == DateFormatString.ymd.rawValue.count {
+                    date = dateFormatter.date(from: dateStr)
+                } else {
+                    /// Some movies have an empty string set in their `release_date` field. Default value is provided.
+                    date = dateFormatter.date(from: "1000-01-01")
+                }
+
+                guard let unwrappedDate = date else {
+                    throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateStr)")
+                }
+
+                return unwrappedDate
+            })
             return try decoder.decode(expectedType, from: data)
         } catch let error {
             DDLogError("[BaseProvider][parseResponse] \(error)")

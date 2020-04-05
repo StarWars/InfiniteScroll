@@ -14,11 +14,14 @@ extension FavouriteMovieProtocol {
 protocol MoviesModulePresenterInput: BasePresenterInput, FavouriteMovieProtocol {
 
     var retrievedMovies: [Movie] { get }
+    var retrievedSearchResults: [Movie] { get }
     var totalMoviesCount: Int { get }
+    var totalSearchResultsCount: Int { get }
 
     func search(_ title: String)
     func movie(at indexPath: IndexPath) -> Movie?
-    func showMovieDetails(at indexPath: IndexPath)
+    func searchResult(at indexPath: IndexPath) -> Movie?
+    func showMovieDetails(at indexPath: IndexPath, isSearchActive: Bool)
     func retrieveMovies()
 }
 
@@ -29,6 +32,8 @@ protocol MoviesModuleInteractorOutput: class {
 class MoviesModulePresenter {
 
     private var movies = [Movie]()
+    private var searchResults = [Movie]()
+
     private var currentPage = 1
     private var totalCount = 0
 
@@ -60,8 +65,16 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
         return totalCount
     }
 
+    var totalSearchResultsCount: Int {
+        return searchResults.count
+    }
+
     var retrievedMovies: [Movie] {
         return movies
+    }
+
+    var retrievedSearchResults: [Movie] {
+        return searchResults
     }
 
     var baseWireframe: BaseWireframeInput? {
@@ -76,16 +89,32 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
         return movies[indexPath.row]
     }
 
-    func showMovieDetails(at indexPath: IndexPath) {
-        guard let movieToShow = movie(at: indexPath) else {
+    func searchResult(at indexPath: IndexPath) -> Movie? {
+        guard indexPath.row < searchResults.count else {
+            DDLogError("invalid index path item requested")
+            return nil
+        }
+        return searchResults[indexPath.row]
+    }
+
+    func showMovieDetails(at indexPath: IndexPath, isSearchActive: Bool) {
+        var selectedMovie: Movie?
+
+        if isSearchActive {
+            selectedMovie = searchResult(at: indexPath)
+        } else {
+            selectedMovie = movie(at: indexPath)
+        }
+
+        guard let movieToShow = selectedMovie else {
             view?.showStandardAlert(title: R.string.localizable.error_failure(), message: "Movie not found")
             return
         }
+
         wireframe.showDetails(of: movieToShow)
     }
 
     func retrieveMovies() {
-
         let initialPageQuery = MovieNowPlayingQuery(page: currentPage)
 
         interactor.retrieveNowPlayingMovies(query: initialPageQuery) { [weak self] response, error in
@@ -119,14 +148,24 @@ extension MoviesModulePresenter: MoviesModulePresenterInput {
             } else if let error = error, error != .fetchInProgress {
                 self.view?.showStandardAlert(title: nil, message: error.description)
             }
-
         }
     }
 
     func search(_ title: String) {
+        guard !title.isEmpty else {
+            searchResults = []
+            self.view?.reloadData(newIndexPathsToReload: nil)
+            return
+        }
+
         let searchMovieQuery = SearchMovieQuery(query: title)
         interactor.searchMovie(query: searchMovieQuery) { response, error in
-            DDLogError("Response: \(response?.results.count ?? 0)")
+            if let response = response  {
+                self.searchResults = response.results
+                self.view?.reloadData(newIndexPathsToReload: nil)
+            } else if let error = error, error != .fetchInProgress {
+                self.view?.showStandardAlert(title: nil, message: error.description)
+            }
         }
     }
 }

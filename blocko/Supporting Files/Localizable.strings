@@ -1,8 +1,8 @@
 // MARK: - General -
-"general_alert_ok" = "Ok";
+"general_alert_ok" = "OK";
 "fetching_movies" = "Fetching movies";
-"cta_empty_movies" = "No movies found :( Pull to refresh!";
-"type_to_search" = "Type to search";
+"cta_empty_movies" = "No movies found :(";
+"type_to_search" = "Type to search movies";
 
 // MARK: - Titles -
 "movies_module_title" = "Currently playing";
@@ -16,6 +16,7 @@
 "no_internet_connection" = "no internet connection";
 "fetch_in_progress" = "Fetch in progress";
 "unknown_reason" = "unknown reason";
+"invalid_request" = "invalid request";
 "connection_timeout" = "connection timeout";
 "connection_refused" = "connection refused";
 "empty_content" = "empty response from the server";

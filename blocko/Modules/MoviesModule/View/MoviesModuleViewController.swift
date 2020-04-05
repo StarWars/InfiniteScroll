@@ -23,7 +23,19 @@ class MoviesModuleViewController: BaseViewController {
         return searchController.isActive && (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
 
-    private let searchController = UISearchController(searchResultsController: nil)
+    private let searchController: UISearchController = {
+        let controller = UISearchController(searchResultsController: nil)
+        controller.obscuresBackgroundDuringPresentation = false
+        controller.searchBar.tintColor = ColorProvider.white
+        controller.searchBar.barTintColor = ColorProvider.white
+        controller.searchBar.placeholder = R.string.localizable.type_to_search()
+        controller.searchBar.autocapitalizationType = .none
+        controller.searchBar.autocorrectionType = .no
+        controller.searchBar.searchBarStyle = UISearchBar.Style.minimal
+        controller.searchBar.searchTextPositionAdjustment = UIOffset(horizontal: 8, vertical: 0)
+        return controller
+    }()
+
 	fileprivate var customView: MoviesModuleView { return forceCast(view as Any) }
     let presenter: MoviesModulePresenterInput
 
@@ -69,8 +81,6 @@ class MoviesModuleViewController: BaseViewController {
     private func setupSearchController() {
 
         searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = R.string.localizable.type_to_search()
 
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
@@ -94,7 +104,11 @@ class MoviesModuleViewController: BaseViewController {
     }
 
     func isLoadingCell(for indexPath: IndexPath) -> Bool {
-        return indexPath.row >= presenter.retrievedMovies.count
+        if isFiltering {
+            return indexPath.row >= presenter.retrievedSearchResults.count
+        } else {
+            return indexPath.row >= presenter.retrievedMovies.count
+        }
     }
 
     func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
@@ -105,7 +119,6 @@ class MoviesModuleViewController: BaseViewController {
 
     func filterContentForSearchText(_ searchText: String) {
         presenter.search(searchText)
-        customView.tableView.reloadData()
     }
 }
 
@@ -146,19 +159,26 @@ extension MoviesModuleViewController: UITableViewDataSourcePrefetching {
 
 extension MoviesModuleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.showMovieDetails(at: indexPath)
+        presenter.showMovieDetails(at: indexPath, isSearchActive: isFiltering)
     }
 }
 
 extension MoviesModuleViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        let moviesCount = presenter.totalMoviesCount
+        var moviesCount = 0
+
+        if isFiltering {
+            moviesCount = presenter.totalSearchResultsCount
+            DDLogError("movies count: \(moviesCount)")
+        } else {
+            moviesCount = presenter.totalMoviesCount
+        }
 
         if moviesCount == 0 {
             tableView.backgroundView = EmptyTableView(title: R.string.localizable.cta_empty_movies())
@@ -176,7 +196,12 @@ extension MoviesModuleViewController: UITableViewDataSource {
         if isLoadingCell(for: indexPath) {
             cell.setup(with: nil)
         } else {
-            let movie = presenter.movie(at: indexPath)
+            var movie: Movie?
+            if isFiltering {
+                movie = presenter.searchResult(at: indexPath)
+            } else {
+                movie = presenter.movie(at: indexPath)
+            }
             cell.setup(with: movie)
         }
 
@@ -218,7 +243,7 @@ extension MoviesModuleViewController: UISearchResultsUpdating {
 
         self.searchTask = task
 
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.75, execute: task)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: task)
     }
 }
 

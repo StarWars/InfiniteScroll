@@ -5,7 +5,8 @@ enum APIErrorCode: Int {
     unknown = -2,
     fetchInProgress = -3,
     allGood = 200,
-    unauthorized = 401
+    unauthorized = 401,
+    invalid = 422
 
     var description: String {
         switch self {
@@ -19,6 +20,8 @@ enum APIErrorCode: Int {
             return R.string.localizable.no_error()
         case .fetchInProgress:
             return R.string.localizable.fetch_in_progress()
+        case .invalid:
+            return R.string.localizable.invalid_request()
         }
     }
 }

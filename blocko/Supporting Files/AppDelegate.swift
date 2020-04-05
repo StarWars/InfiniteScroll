@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setupRootController()
         setupThirdPartySDKs()
+        setupUIAppearance()
 
         return true
     }
@@ -36,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Navigation -
+
+    private func setupUIAppearance() {
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: ColorProvider.white]
+    }
 
     private func setupRootController() {
         window = UIWindow(frame: UIScreen.main.bounds)

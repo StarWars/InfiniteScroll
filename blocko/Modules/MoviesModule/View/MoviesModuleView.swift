@@ -10,7 +10,8 @@ class MoviesModuleView: BaseView {
                           NSAttributedString.Key.foregroundColor: ColorProvider.white]
 
         view.tintColor = ColorProvider.white
-        view.attributedTitle = NSAttributedString(string: R.string.localizable.fetching_movies(), attributes: attributes)
+        view.attributedTitle = NSAttributedString(string: R.string.localizable.fetching_movies(),
+                                                  attributes: attributes)
 
         return view
     }()
@@ -24,6 +25,7 @@ class MoviesModuleView: BaseView {
         view.estimatedRowHeight = 300
         view.separatorStyle = .none
         view.refreshControl = refreshControl
+        view.keyboardDismissMode = .onDrag
 
         return view
     }()
