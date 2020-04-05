@@ -1,6 +1,5 @@
 import CocoaLumberjack
 import NotificationBannerSwift
-import RxSwift
 import SnapKit
 import UIKit
 
@@ -13,8 +12,6 @@ protocol BaseModuleViewInput: BaseViewInput {
 }
 
 class BaseViewController: UIViewController {
-
-    var disposeBag = DisposeBag()
 
     var basePresenter: BasePresenterInput?
 

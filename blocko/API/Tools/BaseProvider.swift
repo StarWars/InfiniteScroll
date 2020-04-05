@@ -1,6 +1,5 @@
 import Alamofire
 import CocoaLumberjack
-import RxSwift
 import UIKit
 
 /**

@@ -10,8 +10,6 @@ target 'blocko' do
     pod 'NotificationBannerSwift'
     pod 'R.swift'
     pod 'Reusable'
-    pod 'RxCocoa'
-    pod 'RxSwift'
     pod 'Kingfisher'
     pod 'SnapKit'
     pod 'SwiftLint'
