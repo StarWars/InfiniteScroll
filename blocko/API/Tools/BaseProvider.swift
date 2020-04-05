@@ -54,7 +54,7 @@ class BaseProvider {
                 let container = try decoder.singleValueContainer()
                 let dateStr = try container.decode(String.self)
 
-                var date: Date? = nil
+                var date: Date?
 
                 if dateStr.count == DateFormatString.ymd.rawValue.count {
                     date = dateFormatter.date(from: dateStr)

@@ -9,5 +9,5 @@ struct FontProvider {
     static var standardBold: UIFont {
         return UIFont.systemFont(ofSize: 12, weight: .bold)
     }
-    
+
 }

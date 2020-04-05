@@ -13,7 +13,7 @@ class BlurredLabelView: BaseView {
 
     private lazy var label: UILabel = {
         let view = UILabel()
-        view.textColor = ColorProvider.title
+        view.textColor = ColorProvider.white
         view.font = UIFont.systemFont(ofSize: 12)
         return view
     }()

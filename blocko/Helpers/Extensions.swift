@@ -14,7 +14,7 @@ extension UIView {
         }
         return self.snp
     }
-    
+
     func roundedEdges(radius: CGFloat = 10) {
         clipsToBounds = true
         layer.cornerRadius = radius
@@ -55,7 +55,7 @@ extension UIImage {
     }
 }
 
-public extension Encodable {
+extension Encodable {
     var dictionary: [String: Any]? {
         guard let data = try? JSONEncoder().encode(self) else {
             return nil

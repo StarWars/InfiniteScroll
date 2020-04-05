@@ -95,7 +95,8 @@ class MoviesModuleViewController: BaseViewController {
 		view = MoviesModuleView()
 	}
 
-    @objc private func pullToRefresh() {
+    @objc
+    private func pullToRefresh() {
         if presenter.retrievedMovies.isEmpty {
             presenter.retrieveMovies()
         } else {
@@ -147,7 +148,6 @@ extension MoviesModuleViewController: MoviesModuleViewInput {
     }
 
 }
-
 
 extension MoviesModuleViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -227,7 +227,6 @@ extension MoviesModuleViewController: UIAdaptivePresentationControllerDelegate {
     }
 }
 
-
 extension MoviesModuleViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
@@ -246,4 +245,3 @@ extension MoviesModuleViewController: UISearchResultsUpdating {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: task)
     }
 }
-

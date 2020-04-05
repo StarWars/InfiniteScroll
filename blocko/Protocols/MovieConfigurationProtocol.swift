@@ -1,5 +1,5 @@
-import UIKit
 import Kingfisher
+import UIKit
 
 protocol MovieViewContentProtocol {
     var titleLabel: UILabel { get }
@@ -19,6 +19,7 @@ protocol MovieConfigurationProtocol: class where Self: MovieViewContentProtocol 
 }
 
 extension MovieConfigurationProtocol {
+
     func setup(with movie: Movie?) {
         if let url = APIClient.sharedInstance.backgroundImageURL(movie) {
             moviePoster.kf.setImage(with: url, options: KingfisherOptionsInfo([.backgroundDecode, .forceTransition]))
@@ -44,9 +45,10 @@ extension MovieConfigurationProtocol {
         }
 
         if let movieID = movie?.id {
-            DataController.shared.get(movie: "\(movieID)", completion: { [weak self] movie, error in
+            DataController.shared.get(movie: "\(movieID)", completion: { [weak self] movie, _ in
                 self?.favButton.isSelected = movie != nil
             })
         }
     }
+
 }

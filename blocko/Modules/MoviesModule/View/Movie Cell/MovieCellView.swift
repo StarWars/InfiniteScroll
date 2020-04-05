@@ -34,7 +34,7 @@ class MovieCellView: UIView, MovieConfigurationProtocol, MovieViewContentProtoco
 
     internal let titleLabel: UILabel = {
         let view = UILabel()
-        view.textColor = ColorProvider.title
+        view.textColor = ColorProvider.white
         view.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return view
     }()
@@ -79,7 +79,7 @@ class MovieCellView: UIView, MovieConfigurationProtocol, MovieViewContentProtoco
     }
 
     private func setupConstraints() {
-        
+
         moviePoster.snp.remakeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(kDefaultInset)
             make.top.bottom.equalToSuperview().inset(kDefaultInset)

@@ -567,6 +567,7 @@
 				11B8C4222DD4B1580F34B652 /* [CP] Check Pods Manifest.lock */,
 				BF3084D1213242900022D6A7 /* R.swift */,
 				BFE1FCD221322B66005EE8CD /* Sources */,
+				BFA2709F243A5B14001F8942 /* SwiftLint */,
 				BFE1FCD321322B66005EE8CD /* Frameworks */,
 				BFE1FCD421322B66005EE8CD /* Resources */,
 				EB19482FB2E623432165F320 /* [CP] Embed Pods Frameworks */,
@@ -664,6 +665,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/blocko/Supporting Files/R.generated.swift\"\n";
+		};
+		BFA2709F243A5B14001F8942 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		EB19482FB2E623432165F320 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -8,7 +8,6 @@ class BaseRequest: NSObject {
     var method: HTTPMethod = .get
     var parametersEncoding: Alamofire.ParameterEncoding = URLEncoding.default
 
-
     // Some of the requests has default responseHandlers
     var successResponseHandler: ((DataResponse<Data, AFError>) -> Void)?
     var failureResponseHandler: ((DataResponse<Data, AFError>?, _ errorCode: APIErrorCode?) -> Void)?

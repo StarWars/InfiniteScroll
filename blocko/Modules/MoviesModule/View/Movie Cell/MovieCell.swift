@@ -19,7 +19,7 @@ class MovieCell: UITableViewCell, Reusable {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
-    
+
     private func setupView() {
         tintColor = ColorProvider.white
         contentView.addSubview(movieView)
@@ -58,4 +58,3 @@ class MovieCell: UITableViewCell, Reusable {
         movieView.setup(with: movie)
     }
 }
-

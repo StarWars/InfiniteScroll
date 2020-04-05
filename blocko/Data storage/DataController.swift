@@ -1,4 +1,3 @@
-
 import CocoaLumberjack
 import CoreData
 import CoreLocation
@@ -14,7 +13,6 @@ class DataController: NSObject {
     // MARK: - Constants -
     private let kDomain = "pl.appbeat.dxcchallenge"
     static let shared = DataController()
-    
 
     // MARK: - Variables -
 
@@ -38,7 +36,6 @@ class DataController: NSObject {
 
     // MARK: - Init -
     private override init() {} // Prevent clients from creating another instance.
-
 
     // MARK: - Helpers: General -
 
@@ -89,8 +86,8 @@ class DataController: NSObject {
 
         // Initialize Fetched Results Controller
         let fetchedResultsController = NSFetchedResultsController<RMovie>(fetchRequest: fetchRequest,
-                                                                              managedObjectContext: context,
-                                                                              sectionNameKeyPath: nil, cacheName: nil)
+                                                                          managedObjectContext: context,
+                                                                          sectionNameKeyPath: nil, cacheName: nil)
 
         return fetchedResultsController
     }
@@ -130,8 +127,8 @@ class DataController: NSObject {
 
         let predicate = NSPredicate(format: "movieID = %@", id)
         let fetchedResultsController = DataController.favouriteMoviesFetchedResultsController(predicate: predicate,
-                                                                                   sortDescriptors: nil,
-                                                                                   fetchLimit: 1)
+                                                                                              sortDescriptors: nil,
+                                                                                              fetchLimit: 1)
 
         let context = DataController.shared.persistentContainer.viewContext
 
@@ -158,7 +155,7 @@ class DataController: NSObject {
                 return
             }
 
-            if existingMovie == nil  {
+            if existingMovie == nil {
 
                 guard let item = NSEntityDescription.insertNewObject(forEntityName: "RMovie", into: context) as? RMovie else {
                     let error = NSError(domain: self.kDomain,

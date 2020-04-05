@@ -31,11 +31,11 @@ extension MovieDetailsModulePresenter: MovieDetailsModulePresenterInput {
     var baseWireframe: BaseWireframeInput? {
         return wireframe
     }
-    
+
     var movie: Movie {
         return currentMovie
     }
-    
+
 }
 
 extension MovieDetailsModulePresenter: MovieDetailsModuleInteractorOutput {
